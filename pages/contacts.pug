@@ -1,0 +1,65 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/contacts.css")
+
+block content
+
+    section.contacts
+        div.container
+            
+            div.section_title.inner
+                div.subtitle
+                    img(src="images/subtitle.svg")
+                h1 Контакты
+
+            
+            div.contacts
+                span.subtitle Контакты
+                div.list
+                    div.item
+                        span Телефоны:
+                        div.inline
+                            a(href="#") +7 (495) 877-30-84, 
+                            a(href="#") +7 (495) 877-30-84
+                    div.item
+                        span E-mail:
+                        a(href="#") boncak63@hotmail.com
+                    div.item
+                        span E-mail:
+                        a(href="#") boncak63@hotmail.com
+                    div.item
+                        span  
+                        div.inline.socials
+                            a(href="#") YouTube #[b ↗]
+                            a(href="#") WhatsApp #[b ↗]
+                            a(href="#") Telegram #[b ↗]
+                            a(href="#") RuTube #[b ↗]
+
+            div.requisite
+                span.subtitle Наши реквизиты
+                div.list
+                    div.item
+                        span КПП
+                        strong 997750001
+                    div.item
+                        span ОГРН
+                        strong 1117746646269
+            
+                    div.item
+                        span Сокращенное наименование:
+                        strong ООО «АкваСтар»
+                    div.item
+                        span ИНН
+                        strong 7722753969
+            
+                    div.item
+                        span Почтовый адрес:
+                        strong 09451, Россия, Москва, улица Братиславская, дом 16, корпус 1, помещение 3
+                    div.item
+                        span ОГРН
+                        strong 1117746646269
+            
+                    
+    include ../components/sections/_shops.pug

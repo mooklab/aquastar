@@ -1,0 +1,90 @@
+section.account_orders div.container {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+section.account_orders div.section_title.inner {
+  margin-bottom: var(--section-gap);
+}
+@media (max-width: 960px) {
+  section.account_orders div.section_title.inner div.subtitle {
+    display: none;
+  }
+}
+section.account_orders div.section_title.inner h1 {
+  grid-column: 7 span;
+}
+@media (max-width: 960px) {
+  section.account_orders div.section_title.inner h1 {
+    grid-column: 1 span;
+  }
+}
+section.account_orders div.account {
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: var(--grid-gap);
+}
+@media (max-width: 960px) {
+  section.account_orders div.account {
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+  }
+}
+section.account_orders div.account div.side {
+  display: grid;
+  grid-gap: 24px;
+  grid-column: 3 span;
+}
+@media (max-width: 960px) {
+  section.account_orders div.account div.side {
+    grid-column: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 16px;
+    overflow: auto;
+  }
+  section.account_orders div.account div.side::-webkit-scrollbar {
+    display: none;
+    opacity: 0;
+  }
+}
+section.account_orders div.account div.side a {
+  display: block;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #949faf;
+  white-space: nowrap;
+}
+@media (max-width: 1280px) {
+  section.account_orders div.account div.side a {
+    font-size: 20px;
+  }
+}
+@media (max-width: 960px) {
+  section.account_orders div.account div.side a {
+    font-size: 16px;
+  }
+}
+section.account_orders div.account div.side a.active {
+  color: #2b333f;
+}
+section.account_orders div.account div.content {
+  grid-column: 9 span;
+  display: grid;
+  grid-gap: 16px;
+}
+@media (max-width: 1280px) {
+  section.account_orders div.account div.content {
+    grid-gap: 8px;
+  }
+}
+@media (max-width: 960px) {
+  section.account_orders div.account div.content {
+    grid-column: unset;
+  }
+}/*# sourceMappingURL=account_orders.css.map */

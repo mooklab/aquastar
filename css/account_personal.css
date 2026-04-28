@@ -1,0 +1,164 @@
+section.account_personal div.container {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+section.account_personal div.section_title.inner {
+  margin-bottom: var(--section-gap);
+}
+@media (max-width: 960px) {
+  section.account_personal div.section_title.inner div.subtitle {
+    display: none;
+  }
+}
+section.account_personal div.section_title.inner h1 {
+  grid-column: 7 span;
+}
+@media (max-width: 960px) {
+  section.account_personal div.section_title.inner h1 {
+    grid-column: 1 span;
+  }
+}
+section.account_personal div.account {
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: var(--grid-gap);
+}
+@media (max-width: 960px) {
+  section.account_personal div.account {
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+  }
+}
+section.account_personal div.account div.side {
+  display: grid;
+  grid-gap: 24px;
+  grid-column: 3 span;
+}
+@media (max-width: 960px) {
+  section.account_personal div.account div.side {
+    grid-column: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 16px;
+    overflow: auto;
+  }
+  section.account_personal div.account div.side::-webkit-scrollbar {
+    display: none;
+    opacity: 0;
+  }
+}
+section.account_personal div.account div.side a {
+  display: block;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #949faf;
+  white-space: nowrap;
+}
+@media (max-width: 1280px) {
+  section.account_personal div.account div.side a {
+    font-size: 20px;
+  }
+}
+@media (max-width: 960px) {
+  section.account_personal div.account div.side a {
+    font-size: 16px;
+  }
+}
+section.account_personal div.account div.side a.active {
+  color: #2b333f;
+}
+section.account_personal div.account div.content {
+  display: grid;
+  grid-gap: var(--section-gap);
+  grid-column: 9 span;
+}
+@media (max-width: 960px) {
+  section.account_personal div.account div.content {
+    grid-column: unset;
+  }
+}
+section.account_personal div.account div.content h5 {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 24px;
+  margin-bottom: 40px;
+}
+@media (max-width: 1280px) {
+  section.account_personal div.account div.content h5 {
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 960px) {
+  section.account_personal div.account div.content h5 {
+    margin-bottom: 16px;
+  }
+}
+section.account_personal div.account div.content h5:after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: #dadde1;
+}
+section.account_personal div.account div.content div.groups {
+  display: grid;
+  grid-gap: var(--section-gap);
+}
+section.account_personal div.account div.content div.inputs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 24px var(--grid-gap);
+}
+@media (max-width: 960px) {
+  section.account_personal div.account div.content div.inputs {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  section.account_personal div.account div.content div.inputs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+section.account_personal div.account div.content div.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--grid-gap);
+}
+@media (max-width: 640px) {
+  section.account_personal div.account div.content div.buttons {
+    grid-template-columns: 1fr;
+  }
+}
+section.account_personal div.account div.content div.buttons button {
+  width: 100%;
+}
+section.account_personal div.account div.content div.buttons button span {
+  text-align: center;
+}
+section.account_personal div.account div.content fieldset.input.name,
+section.account_personal div.account div.content fieldset.input.surname,
+section.account_personal div.account div.content fieldset.input.birthday,
+section.account_personal div.account div.content fieldset.input.city,
+section.account_personal div.account div.content fieldset.input.street {
+  grid-column: 2 span;
+}
+section.account_personal div.account div.content fieldset.input.phone,
+section.account_personal div.account div.content fieldset.input.email {
+  grid-column: 3 span;
+}
+@media (max-width: 1280px) {
+  section.account_personal div.account div.content fieldset.input.phone,
+  section.account_personal div.account div.content fieldset.input.email {
+    grid-column: 2 span;
+  }
+}/*# sourceMappingURL=account_personal.css.map */

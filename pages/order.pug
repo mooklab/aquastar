@@ -1,0 +1,117 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/order.css")
+
+block content
+
+    section.order
+        div.container
+            
+            div.section_title.inner
+                div.subtitle
+                    img(src="images/subtitle.svg")
+                h1 Оформление заказа
+
+            div.content
+
+                div.form
+                    div.groups
+
+                        div.group
+                            h5 Город доставки
+                            div.inputs
+                                fieldset.input.city
+                                    span Город
+                                    input(type="text", placeholder="Город", value="г Москва")
+                                fieldset.input.street
+                                    span Улица
+                                    input(type="text", placeholder="Улица" value="ул Южная")
+                                fieldset.input.house
+                                    span Дом
+                                    input(type="text", placeholder="Дом", value="87")
+                                fieldset.input.flat
+                                    span Квартира
+                                    input(type="text", placeholder="Квартира" value="5")
+
+                        div.group
+                            h5 Способ оплаты
+                            div.inputs.payment
+                                label.radio.small
+                                    input(type="radio", name="payment", value="1"  checked)
+                                    div.circle
+                                    span Наличными при получении
+                                label.radio.small
+                                    input(type="radio", name="payment", value="2")
+                                    div.circle
+                                    span Картой при получении
+                                label.radio.small
+                                    input(type="radio", name="payment", value="3")
+                                    div.circle
+                                    span СБП
+                                label.radio.small
+                                    input(type="radio", name="payment", value="4")
+                                    div.circle
+                                    span Картой онлайн
+
+                        div.group
+                            h5 Способ доставки
+                            div.inputs.delivery
+                                label.radio.big
+                                    input(type="radio", name="delivery", value="1"  checked)
+                                    div.circle
+                                    div.description
+                                        div
+                                            strong Курьер
+                                            span.note Срок: 5 дней
+                                        strong 2 010 ₽
+                                label.radio.big.adress
+                                    input(type="radio", name="delivery", value="2")
+                                    div.circle
+                                    div.description
+                                        div
+                                            strong Курьер
+                                            span.note Срок: 5 дней
+                                        strong 2 010 ₽
+                                    div.adress
+                                        strong.red Выберите ПВЗ
+                                        button
+                                            span Выбрать
+                                label.radio.big
+                                    input(type="radio", name="delivery", value="3")
+                                    div.circle
+                                    div.description
+                                        div
+                                            strong Самовывоз
+                                            span.note С 5 июня
+                                        strong Бесплатно
+
+                        div.group
+                            h5 Контактные данные
+                            div.inputs
+                                fieldset.input.phone
+                                    span Номер телефона
+                                    input(type="text", placeholder="Номер телефона", value="+ 7 (999) 999-99-99")
+                                fieldset.input.email
+                                    span E-mail
+                                    input(type="text", placeholder="E-mail" value="bill.sanders@gmail.com")
+
+                    a(href="#").button.red
+                        span Оформить заказ
+                        div.icon
+                            include ../images/arrow_top_right.svg
+
+                div.products
+                    div.product_item
+                        img(src="images/1.webp", alt="Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный")
+                        div.text
+                            strong Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный
+                            strong 75 000 ₽
+                    div.product_item
+                        img(src="images/1.webp", alt="Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный")
+                        div.text
+                            strong Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный
+                            strong 75 000 ₽
+
+                    

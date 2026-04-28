@@ -1,0 +1,620 @@
+@use '../../components/common/sass/_colors' as *
+@use '../../components/common/sass/_mixins' as *
+
+header
+    position: relative
+    padding-top: 10px
+    padding-bottom: 10px
+    z-index: 10
+    +s(s)
+        padding-top: unset
+        padding-bottom: unset
+
+    div.container
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: space-between
+        border: 1px solid $dark-7
+        border-radius: 10px
+        padding: 8px
+        +s(m)
+            grid-column: full
+            border-radius: unset
+        +s(s)
+            padding: unset
+
+    div.menu_mobile
+        display: none
+        border-right: 1px solid $dark-8
+        +s(m)
+            display: block
+
+    div.light
+        display: none
+
+    div.main
+        display: grid
+        grid-gap: 16px
+        grid-template-columns: repeat(2, max-content)
+        align-items: center
+        margin-left: 16px
+        +s(l)
+            margin-left: 8px
+        +s(s)
+            grid-gap: 10px
+
+        a.logotype
+            display: block
+            +s(l)
+                display: none
+            +s(m)
+                display: block
+                img
+                    width: 100px
+        a.emblem
+            display: none
+            +s(l)
+                display: block
+            +s(m)
+                display: none
+        button.catalog
+            +s(m)
+                display: none
+            div.icon
+                margin-right: unset
+                margin-left: -16px
+            svg
+                display: none
+                path
+                    fill: white
+
+    menu
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        grid-gap: 16px
+        font-weight: 500
+        font-size: 14px
+        line-height: 100%
+        letter-spacing: -0.01em
+        color: $dark-1
+        +s(l)
+            grid-gap: 10px
+        +s(m)
+            display: none
+
+    hr
+        height: 30px
+        width: 1px
+        background: $dark-6
+        +s(l)
+            display: none
+
+    a.phone
+        font-weight: 500
+        font-size: 14px
+        line-height: 100%
+        letter-spacing: -0.01em
+        color: $dark-1
+        +s(s)
+            display: none
+
+    div.controls
+        user-select: none
+        display: grid
+        grid-template-columns: repeat(2, max-content)
+        z-index: 2
+        div.search
+            cursor: pointer
+            display: grid
+            align-items: center
+            justify-items: center
+            border-radius: 8px
+            width: 56px
+            height: 56px
+            backdrop-filter: blur(15px)
+            background: $white
+            +s(l)
+                width: 50px
+                height: 50px
+            +s(s)
+                background: transparent
+                border-left: 1px solid $dark-8
+                border-right: 1px solid $dark-8
+                border-radius: unset
+            img.cross
+                display: none
+        div.group
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            align-items: center
+            grid-gap: 28px
+            border-radius: 8px
+            padding: 4px 4px 4px 28px
+            height: 56px
+            backdrop-filter: blur(15px)
+            background: $white
+            +s(l)
+                grid-gap: 10px
+                padding: 4px 4px 4px 14px
+                height: 50px
+            +s(s)
+                background: transparent
+                padding-left: 18px
+                padding-right: 18px
+
+            div.compare
+                cursor: pointer
+                display: grid
+                svg
+                    width: 20px
+                    height: 20px
+                    path
+                        fill: $dark-1
+
+            div.favourite
+                cursor: pointer
+                display: grid
+                svg
+                    width: 20px
+                    height: 20px
+                    path
+                        fill: transparent
+                        stroke: $dark-1
+                        stroke-width: 1.5px
+
+            div.cart
+                cursor: pointer
+                display: grid
+
+            div.account
+                cursor: pointer
+                display: grid
+                align-items: center
+                justify-items: center
+                border-radius: 8px
+                width: 48px
+                height: 48px
+                backdrop-filter: blur(15px)
+                background: $red
+                +s(l)
+                    width: 42px
+                    height: 42px
+                +s(s)
+                    display: none
+
+                div.icon
+                    display: grid
+                div.cross
+                    display: none
+                    svg
+                        path
+                            fill: white
+
+    div.popup
+        display: grid
+        position: absolute
+        top: calc(100% + 10px)
+        right: 0
+        border-radius: 0 0 10px 10px
+        padding: 24px
+        width: 500px
+        backdrop-filter: blur(29px)
+        background: $dark-9
+        z-index: 1
+        pointer-events: none
+        opacity: 0
+        transition: all 0.5s
+        +s(s)
+            top: 100%
+            width: 100%
+            height: calc(100vh - 53px) !important
+
+        &::before
+            content: 'Мой кабинет'
+            position: absolute
+            top: -72px
+            left: 0
+            display: grid
+            height: 72px
+            width: 100%
+            background: $dark-9
+            border-top-right-radius: 10px
+            border-top-left-radius: 10px
+            padding: 24px
+            box-sizing: border-box
+            font-weight: 500
+            font-size: 18px
+            line-height: 120%
+            letter-spacing: -0.01em
+            color: #1f252d
+            z-index: 2
+            text-align: left
+            +s(s)
+                display: none
+
+    div.popup.signin
+        align-items: start
+        grid-template-rows: max-content 1fr max-content
+        grid-gap: 32px
+        text-align: center
+        height: 620px
+
+        form
+            display: grid
+            grid-gap: 16px
+
+        button
+            width: 100%
+            span
+                text-align: center
+
+    div.popup.register
+        align-items: start
+        grid-template-rows: max-content 1fr
+        grid-gap: 32px
+        text-align: center
+        height: 720px
+
+        form
+            display: grid
+            align-items: start
+            grid-gap: 16px
+            grid-template-rows: 1fr
+            grid-auto-flow: row
+            grid-auto-rows: max-content
+            height: 100%
+
+        button
+            width: 100%
+            span
+                text-align: center
+
+        div.inputs
+            display: grid
+            grid-gap: 16px
+
+        div.checkboxes
+            display: grid
+            grid-gap: 4px
+
+        label.checkbox
+            cursor: pointer
+            font-weight: 500
+            font-size: 14px
+            line-height: 110%
+            letter-spacing: -0.01em
+            text-align: center
+            color: $dark-3
+            text-align: left
+            span
+                position: relative
+                display: grid
+                align-items: start
+                grid-template-columns: max-content 1fr
+                grid-gap: 8px
+            span:before
+                content: ''
+                display: block
+                position: relative
+                top: -1px
+                width: 18px
+                height: 18px
+                border-radius: 2px
+                border: 1px solid $dark-1
+            span:after
+                content: ''
+                position: absolute
+                top: 5px
+                left: 6px
+                display: none
+                width: 9px
+                height: 7px
+                background-image: url(../images/checkbox_tick.svg)
+            input:checked + span:after
+                display: block
+
+    div.popup.code
+        align-items: start
+        grid-template-rows: max-content 1fr
+        grid-gap: 32px
+        text-align: center
+        height: 620px
+        div.text
+            display: grid
+            grid-gap: 16px
+            text-align: center
+            span
+                font-weight: 500
+                font-size: 18px
+                line-height: 120%
+                letter-spacing: -0.01em
+                text-align: center
+                color: $dark-4
+        div.code
+            display: grid
+            align-content: center
+            justify-self: center
+            grid-gap: 24px
+            height: 100%
+            max-width: 380px
+        div.inputs
+            display: grid
+            grid-template-columns: repeat(4, 1fr)
+            grid-gap: 12px
+            input
+                border: unset
+                border-bottom: 1px solid $dark-5
+                border-radius: unset
+                padding: 18px
+                height: 56px
+                width: 100%
+                font-weight: 500
+                font-size: 28px
+                line-height: 120%
+                letter-spacing: -0.02em
+                color: $dark-1
+                text-align: center
+        span.repeat
+            font-weight: 500
+            font-size: 14px
+            line-height: 110%
+            letter-spacing: -0.01em
+            text-align: center
+            color: $dark-4
+            b
+                color: #1f252d
+
+        div.buttons
+            display: grid
+            grid-gap: 16px
+
+        form
+            display: grid
+            grid-template-rows: 1fr max-content
+            height: 100%
+
+        button
+            width: 100%
+            span
+                text-align: center
+        button.transparent
+            background: unset
+
+    div.popup.search
+        align-content: start
+        justify-items: center
+        grid-gap: 24px
+        width: 100%
+        height: 90vh
+        z-index: -1
+        padding-top: 80px
+        &::before
+            content: ''
+
+        form
+
+            position: relative
+            width: 100%
+            max-width: 1280px
+
+            input
+                font-weight: 500
+                font-size: 18px
+                line-height: 120%
+                letter-spacing: -0.01em
+                color: $dark-1
+                border: 1px solid $dark-7
+                border-radius: 8px
+                width: 100%
+                height: 56px
+                padding: 4px
+                padding-left: 24px
+                &::placeholder
+                    color: $dark-4
+
+            button
+                position: absolute
+                top: 4px
+                right: 4px
+                display: grid
+                align-items: center
+                justify-items: center
+                border-radius: 6px
+                width: 48px
+                height: 48px
+                backdrop-filter: blur(15px)
+                background: $dark-1
+                padding: unset
+                svg
+                    path
+                        fill: white
+                &:hover
+                    background: $red
+
+        div.block
+            display: grid
+            max-width: 1280px
+            grid-template-rows: 0fr
+            transition: all 0.5s
+            div.overflow
+                overflow: hidden
+            div.list
+                display: grid
+                grid-template-columns: repeat(2, 1fr)
+                grid-gap: var(--grid-gap)
+                +s(m)
+                    grid-template-columns: 1fr
+
+        div.product_card
+            grid-template-columns: 250px 1fr
+            grid-gap: 24px
+            +s(l)
+                grid-template-columns: 150px 1fr
+                grid-gap: 16px
+            +s(s)
+                grid-template-columns: auto 1fr
+            div.additional
+                position: absolute
+                top: 24px
+                left: 24px
+            div.preview
+                border: unset
+                border-right: 1px solid #c8ccd2
+                padding: unset
+
+        &.show
+            div.block
+                grid-template-rows: 1fr
+
+    div.popup.catalog
+        display: grid
+        grid-gap: 24px
+        backdrop-filter: blur(15px)
+        background: $white
+        right: unset
+        left: 0
+        top: calc(100% + 16px)
+        min-width: unset
+        width: unset
+        border-radius: 10px
+        &::before
+            display: none
+
+        div.menu_item
+
+            width: 316px
+            svg
+                transform: rotate(180deg)
+                path
+                    fill: $dark-4
+
+            div.menu_title
+                cursor: pointer
+                display: grid
+                align-items: center
+                grid-template-columns: 1fr max-content
+                grid-gap: 24px
+                font-weight: 500
+                font-size: 18px
+                line-height: 110%
+                letter-spacing: -0.02em
+                color: $dark-1
+
+            &.opened
+                div.menu_title
+                    span
+                        color: $dark-1
+                    svg
+                        path
+                            fill: $dark-1
+
+                div.submenu
+                    left: 364px
+                    opacity: 1
+                    pointer-events: auto
+
+        div.submenu
+            position: absolute
+            top: 0px
+            left: 360px
+            border-radius: 0 10px 10px 0
+            width: 360px
+            height: 100%
+            background: $dark-9
+            overflow: hidden
+            padding: 0px
+            opacity: 0
+            pointer-events: none
+
+            div.list
+                display: grid
+                align-content: start
+                grid-gap: 10px
+                padding: 24px
+
+            img
+                border-radius: 6px
+                width: 50px
+                height: 50px
+
+            a.submenu_item
+                display: grid
+                align-items: center
+                grid-template-columns: max-content 1fr
+                grid-gap: 10px
+                font-weight: 500
+                font-size: 16px
+                line-height: 110%
+                letter-spacing: -0.01em
+                color: $dark-1
+
+        &:has(div.menu_item.opened)
+            div.menu_item
+                div.menu_title
+                    color: $dark-3
+
+    &.signin
+        div.controls
+            div.group
+                div.account
+                    div.cross
+                        display: grid
+                    div.icon
+                        display: none
+        div.popup.signin
+            opacity: 1
+            pointer-events: auto
+            top: 100%
+
+    &.register
+        div.controls
+            div.group
+                div.account
+                    div.cross
+                        display: grid
+                    div.icon
+                        display: none
+        div.popup.register
+            opacity: 1
+            pointer-events: auto
+            top: 100%
+
+    &.code
+        div.controls
+            div.group
+                div.account
+                    div.cross
+                        display: grid
+                    div.icon
+                        display: none
+        div.popup.code
+            opacity: 1
+            pointer-events: auto
+            top: 100%
+
+    &.search
+        div.controls
+            div.search
+                img.cross
+                    display: grid
+                img.search
+                    display: none
+        div.popup.search
+            opacity: 1
+            pointer-events: auto
+            top: 100%
+
+    &.catalog
+        button.catalog
+            div.icon
+                img
+                    display: none
+                svg
+                    display: block
+        div.popup.catalog
+            opacity: 1
+            pointer-events: auto
+            top: 100%

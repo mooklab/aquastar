@@ -1,0 +1,96 @@
+@use '../components/common/sass/_mixins' as *
+@use '../components/common/sass/_colors' as *
+@use '../components/sections/_shops'
+
+section.contacts
+
+    div.container
+        padding-top: var(--section-gap)
+        padding-bottom: var(--section-gap)
+
+    div.section_title.inner
+        margin-bottom: 0px
+        div.subtitle
+            +s(m)
+                display: none
+        h1
+            grid-column: 7 span
+            +s(m)
+                grid-column: 1 span
+
+    div.contacts,
+    div.requisite
+        display: grid
+        grid-template-columns: repeat(12, 1fr)
+        grid-gap: var(--grid-gap)
+        margin-top: var(--section-gap)
+        +s(m)
+            grid-template-columns: 1fr
+            grid-gap: 24px
+
+        span.subtitle
+            display: block
+            grid-column: 3 span
+            font-weight: 500
+            font-size: 18px
+            line-height: 120%
+            letter-spacing: -0.01em
+            color: $dark-1
+            +s(l)
+                font-size: 16px
+            +s(m)
+                grid-column: 1 span
+
+        div.list
+            grid-column: 9 span
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: var(--grid-gap)
+            +s(m)
+                grid-column: 1 span
+            +s(s)
+                grid-template-columns: 1fr
+
+            div.item
+                display: grid
+                grid-gap: 8px
+                border-bottom: 1px solid $dark-6
+                padding-bottom: 24px
+                +s(l)
+                    padding-bottom: 16px
+
+                span
+                    display: block
+                    font-weight: 500
+                    font-size: 18px
+                    line-height: 120%
+                    letter-spacing: -0.01em
+                    color: $dark-3
+                    +s(l)
+                        font-size: 16px
+
+                a, strong
+                    font-weight: 500
+                    font-size: 18px
+                    line-height: 120%
+                    letter-spacing: -0.01em
+                    color: $dark-1
+                    +s(l)
+                        font-size: 16px
+
+                &:nth-last-child(1),
+                &:nth-last-child(2)
+                    border: unset
+                    padding-bottom: unset
+
+            div.socials
+                display: flex
+                flex-wrap: wrap
+                gap: 32px
+                +s(l)
+                    gap: 16px
+                +s(m)
+                    gap: 8px
+
+                b
+                    color: $red

@@ -1,0 +1,12 @@
+section.articles div.container {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+section.articles div.section_title.inner {
+  margin-bottom: var(--section-gap);
+}
+section.articles div.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: var(--grid-gap);
+}/*# sourceMappingURL=articles.css.map */

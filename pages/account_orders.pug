@@ -1,0 +1,29 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/account_orders.css")
+
+block content
+
+    section.account_orders
+        div.container
+            
+            div.section_title.inner
+                div.subtitle
+                    img(src="images/subtitle.svg")
+                h1 Личный кабинет
+
+            div.account
+                div.side
+                    a(href="#") Общая информация
+                    a(href="#").active Текущие заказы
+                    a(href="#") История заказов
+                div.content
+                    +order_card('В пути')
+                    +order_card('В пути')
+                    +order_card('В пути')
+                    +order_card('В пути')
+                    +order_card('В пути')
+
+                    

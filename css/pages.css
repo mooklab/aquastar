@@ -1,0 +1,19 @@
+section.pages {
+  margin-top: var(--section-gap);
+}
+section.pages div.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: var(--grid-gap);
+}
+section.pages div.container a {
+  padding: 16px 24px;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+section.pages div.container a:hover {
+  background: #ff682b;
+  color: white;
+}/*# sourceMappingURL=pages.css.map */

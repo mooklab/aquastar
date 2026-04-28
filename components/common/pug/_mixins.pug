@@ -1,0 +1,143 @@
+mixin product(image, category, title, price, size="default")
+    div(class=size).product_card
+        div.additional
+            a(href="#").tag Exactus
+        div.preview
+            img(src=image, alt=title)
+            div.controls
+                div(onclick="this.classList.toggle('active')").favourite
+                    include ../../../images/favourite.svg
+                div(onclick="this.classList.toggle('active')").compare
+                    include ../../../images/compare.svg
+        div.description
+            div.text
+                span= category
+                h5= title
+            div.order
+                span.price= price
+                div(onclick="this.classList.toggle('active')").cart
+                    img(src="images/cart.svg")
+                    img(src="images/cart_red.svg")
+        a(href="#").link_area
+
+
+mixin article(image, title, date, size="small")
+    a(href="#", class=size).article_card
+        div.preview
+            img(src=image, alt=title)
+        div.content
+            div.text
+                h4= title
+                span= date
+            div.arrow
+                include ../../../images/arrow_top_right.svg
+
+
+mixin category(title, image, count)
+    a(href="#").category_card
+        span= count
+        h3 !{title}
+        div.arrow
+            img(src="images/arrow_top_right.svg")
+        div.preview
+            img(src=image, alt=title)
+
+
+mixin product_row(title, image, count)
+    div.product_row
+        div.preview
+            img(src=image, alt=title)
+            div.controls
+                div(onclick="this.classList.toggle('active')").favourite
+                    include ../../../images/favourite.svg
+                div(onclick="this.classList.toggle('active')").compare
+                    include ../../../images/compare.svg
+        div.additional
+            a(href="#").tag Exactus
+        div.description
+            div.text
+                span.text= title
+                span.price 75 000 ₽
+                div(onclick="this.classList.toggle('active')").trash
+                    img(src="images/trash.svg")
+            div.order
+                span.price 75 000 ₽
+                if count
+                    span.count= count + ' шт'
+                else
+                    div.quantity
+                        div.minus
+                            include ../../../images/category_minus.svg
+                        input(type="number", min="1", max="99", value="2")
+                        div.plus
+                            include ../../../images/category_plus.svg
+                span.price 150 000 ₽
+        a(href="#").link_area
+
+
+mixin range(name, min, max)
+    div.range
+        div.tracker
+            input(type="range", min=min, max=max, value=min)
+            input(type="range", min=min, max=max, value=max)
+            div.track
+        div.inputs
+            input(type="number", min=min, max=max, value=min)
+            img(src="images/category_minus.svg")
+            input(type="number", min=min, max=max, value=max)
+        block
+
+
+mixin order_card(status)
+    div.order_card
+        div.main
+            div.number
+                strong № 167 118 
+                span 10.09.2021
+            if status === "В пути"
+                div.status.way= status
+            if status === "Доставлено"
+                div.status.delivered= status
+            div.count 
+                strong 12 
+                span Товаров
+            div.price 
+                strong 44 550 ₽ 
+                span Cумма
+            div(onclick="this.closest('div.order_card').classList.toggle('opened')").button
+                img(src="images/category_minus.svg").minus
+                img(src="images/category_plus.svg").plus
+        div.details
+            div.overflow
+                div.payment
+                    div.paid
+                        div
+                            span Оплачено 
+                            strong 250 000 ₽ 
+                        if status === "Доставлено"
+                            span.status.paid Оплачено
+                    div.remain
+                        div
+                            span Остаток 
+                            strong 250 000 ₽
+                        if status === "В пути"
+                            a(href="#").button Оплатить
+                    div.adress
+                        div
+                            span Адрес доставки 
+                            strong Россия, Центр, Москва, ул. Ленина, д. 1, кв. 1 
+                        if status === "Доставлено"
+                            span.status.delivered Доставлено
+                div.list
+                    +product_row('Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', 'images/1.webp', '2')
+                    +product_row('Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', 'images/1.webp', '2')
+                    +product_row('Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', 'images/1.webp', '2')
+                div.buttons
+                    if status === "В пути"
+                        button.red 
+                            span Повторить заказ
+                        button.gray 
+                            span Отменить заказ
+                    if status === "Доставлено"
+                        button.red
+                            span Повторить заказ

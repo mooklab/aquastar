@@ -1,0 +1,1438 @@
+@use '_colors' as *
+@use '_mixins' as *
+
+h1, h2, h3, h4, h5
+    span
+        color: $red
+        line-height: inherit
+        font-size: inherit
+        font-weight: inherit
+
+h1, h2
+    font-weight: 500
+    font-size: 52px
+    line-height: 100%
+    letter-spacing: -0.01em
+    color: $dark-1
+    +s(l)
+        font-size: 40px
+    +s(m)
+        font-size: 32px
+
+h3
+    font-weight: 500
+    font-size: 36px
+    line-height: 110%
+    letter-spacing: -0.02em
+    color: $dark-1
+    +s(m)
+        font-size: 26px
+        letter-spacing: -0.01em
+
+h4
+    font-weight: 500
+    font-size: 28px
+    line-height: 120%
+    letter-spacing: -0.02em
+    color: $dark-1
+    +s(l)
+        font-size: 20px
+
+h5
+    font-weight: 500
+    font-size: 24px
+    line-height: 110%
+    letter-spacing: -0.02em
+    color: $dark-1
+    +s(l)
+        font-size: 18px
+
+button, a.button
+    cursor: pointer
+    display: inline-flex
+    align-items: center
+    gap: 20px
+    height: 56px
+    width: max-content
+    padding-left: 20px
+    background: white
+    border-radius: 10px
+    padding: 4px 20px
+    transition: all 0.2s
+    span
+        font-weight: 600
+        font-size: 16px
+        line-height: 100%
+        letter-spacing: -0.01em
+        text-align: center
+        color: $dark-1
+        width: 100%
+        text-align: left
+    div.icon
+        display: grid
+        align-items: center
+        justify-items: center
+        border-radius: 8px
+        width: 48px
+        height: 48px
+        backdrop-filter: blur(29px)
+        background: $red
+        transition: all 0.5s
+        flex-shrink: 0
+        margin-right: -16px
+
+    &:hover
+        background: $dark-8
+
+        div.icon
+            background: #EB5417
+
+    &.red
+        background: $red
+        span
+            color: $white
+        div.icon
+            background: $white
+        &:hover
+            background: #EB5417
+
+    &.gray
+        background: $dark-9
+        &:hover
+            background: $dark-8
+
+    &.black
+        background: $dark-1
+        span
+            color: $white
+        &:hover
+            background: $red
+
+input[type=text],
+input[type=email],
+input[type=tel]
+    border: 1px solid $dark-7
+    border-radius: 8px
+    font-weight: 500
+    font-size: 18px
+    line-height: 120%
+    letter-spacing: -0.01em
+    color: $dark-1
+    padding: 18px 24px
+    width: 100%
+    +s(l)
+        padding: 18px 20px
+        font-size: 16px
+    &::placeholder
+        font-weight: 500
+        font-size: 18px
+        line-height: 110%
+        letter-spacing: -0.01em
+        color: $dark-4
+
+div.quantity
+    user-select: none
+    display: grid
+    align-items: center
+    grid-template-columns: max-content 1fr max-content
+    div.minus,
+    div.plus
+        cursor: pointer
+        display: grid
+        align-items: center
+        justify-items: center
+        width: 56px
+        height: 56px
+        +s(l)
+            width: 48px
+            height: 48px
+    input
+        font-weight: 600
+        font-size: 16px
+        line-height: 100%
+        letter-spacing: -0.01em
+        text-align: center
+        color: $dark-1
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button
+            appearance: none
+            display: none
+
+div.swiper
+    user-select: none
+    min-width: 0
+    width: 100%
+
+fieldset.input
+    display: grid
+    grid-gap: 10px
+    span
+        font-weight: 500
+        font-size: 16px
+        line-height: 110%
+        letter-spacing: -0.01em
+        color: $dark-4
+        +s(l)
+            font-size: 14px
+
+fieldset.select
+    user-select: none
+    position: relative
+    z-index: 3
+    &:hover
+        z-index: 5
+
+    div.select_choice
+        cursor: pointer
+        border-radius: 6px
+        border: 1px solid $dark-7
+
+        input
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            pointer-events: none
+            background: transparent
+
+        input.placeholder + span
+            opacity: 0.5
+
+        span
+            display: none
+            padding: 20px
+            padding-right: 35px
+            font-weight: 600
+            font-size: 16px
+            line-height: 100%
+            letter-spacing: -0.01em
+            color: $dark-1
+
+        input:checked + span
+            display: grid
+            align-items: center
+            align-content: center
+
+    &:focus
+        z-index: 5
+
+        div.select_dropdown
+            grid-template-rows: 1fr
+            border-color: $dark-7
+
+        img.arrow, svg
+            transform: rotate(180deg)
+
+    div.select_dropdown
+        position: absolute
+        top: 100%
+        margin-top: 4px
+        display: grid
+        grid-template-rows: 0fr
+        transition: all 0.5s
+        height: max-content
+        width: 100%
+        z-index: 6
+        border-radius: 6px
+        border: 1px solid transparent
+        background: $white
+
+        div.select_dropdown_overflow
+            overflow: hidden
+
+        div.select_dropdown_content
+            display: grid
+            grid-gap: 10px
+            background: white
+            max-height: 240px
+            overflow: auto
+            padding: 15px 20px
+            border-radius: 4px
+
+        label
+            cursor: pointer
+            padding: var(--form-element-padding)
+            &:hover
+                color: $red
+
+    img.arrow, svg
+        position: absolute
+        top: calc(50% - 9px)
+        right: 16px
+        transition: all 0.3s
+        transform-origin: center center
+
+a.article_card
+    display: grid
+    grid-gap: 24px
+    +s(l)
+        grid-gap: 16px
+
+    div.preview
+        width: 100%
+        height: 300px
+        border-radius: 10px
+        overflow: clip
+        +s(l)
+            height: 220px
+        +s(m)
+            height: 200px
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+    div.content
+        display: grid
+        grid-template-columns: 1fr max-content
+        grid-gap: var(--grid-gap)
+        div.text
+            display: grid
+            grid-gap: 12px
+            max-width: 300px
+            span
+                font-weight: 500
+                font-size: 14px
+                letter-spacing: -0.01em
+                color: $dark-5
+
+        div.arrow
+            display: grid
+            align-items: center
+            justify-items: center
+            border-radius: 10px
+            width: 56px
+            height: 56px
+            backdrop-filter: blur(15px)
+            background: white
+            transition: all 0.5s
+            +s(m)
+                width: 48px
+                height: 48px
+
+            svg
+                path
+                    fill: $dark-1
+
+    &:hover
+        div.content
+            div.arrow
+                background: $dark-8
+
+    &.big
+        position: relative
+        height: 100%
+        padding: 24px
+        div.preview
+            position: absolute
+            top: 0
+            left: 0
+            height: 100%
+            width: 100%
+        div.content
+            z-index: 1
+            grid-template-columns: 1fr
+            grid-template-rows: 1fr max-content
+            align-items: start
+            h4, span
+                color: white
+            span
+                opacity: 0.6
+
+        div.content
+            div.arrow
+                backdrop-filter: blur(15px)
+                background: rgba(255, 255, 255, 0.1)
+                svg
+                    path
+                        fill: white
+
+        &:hover
+            div.content
+                div.arrow
+                    background: $red
+
+div.product_card
+    position: relative
+    display: grid
+    border-radius: 10px
+    padding: 24px
+    background: $white
+    border: 1px solid transparent
+    +s(m)
+        padding: 16px
+
+    div.additional
+        z-index: 2
+        a.tag
+            cursor: pointer
+            border-radius: 4px
+            padding: 2px 6px
+            background: $yellow
+            font-weight: 500
+            font-size: 12px
+            line-height: 110%
+            letter-spacing: -0.01em
+            text-align: center
+            color: $dark-1
+            transition: all 0.3s
+            +s(m)
+                font-size: 10px
+
+            &:hover
+                background: #F5DD00
+
+    div.controls
+        position: absolute
+        top: 24px
+        right: 24px
+        display: flex
+        gap: 8px
+        z-index: 3
+        +s(m)
+            top: 16px
+            right: 16px
+            flex-direction: column
+
+        div.favourite
+            cursor: pointer
+            display: grid
+            svg
+                path
+                    fill: transparent
+                    transition: all 0.3s
+                +s(m)
+                    width: 20px
+                    height: 20px
+            &:hover
+                svg
+                    path
+                        fill: $red
+                        stroke: $red
+            &.active
+                svg
+                    path
+                        fill: $red
+                        stroke: $red
+
+        div.compare
+            cursor: pointer
+            display: grid
+            svg
+                path
+                    transition: all 0.3s
+                +s(m)
+                    width: 20px
+                    height: 20px
+            &:hover
+                svg
+                    path
+                        fill: $red
+            &.active
+                svg
+                    path
+                        // fill: $blue
+                        fill: $red
+
+    div.preview
+        padding: 30px
+        border-bottom: 1px solid $dark-6
+        display: grid
+        align-items: center
+        justify-items: center
+        +s(m)
+            padding: 16px
+
+        img
+            height: 160px
+            width: 100%
+            object-fit: contain
+            +s(m)
+                height: 120px
+
+    div.description
+        display: grid
+        z-index: 2
+        div.text
+            display: grid
+            grid-gap: 8px
+            margin-top: 18px
+            margin-bottom: 40px
+            +s(l)
+                margin-top: 16px
+                margin-bottom: 16px
+            +s(m)
+                margin-top: unset
+            span
+                font-weight: 500
+                font-size: 14px
+                line-height: 110%
+                letter-spacing: -0.01em
+                color: $dark-6
+            h5
+                font-weight: 500
+                font-size: 18px
+                line-height: 110%
+                letter-spacing: -0.01em
+                color: $dark-1
+                +s(l)
+                    font-size: 16px
+                    padding-right: 30px
+                +s(m)
+                    padding-right: unset
+        div.order
+            display: flex
+            justify-content: space-between
+            align-items: flex-end
+            span.price
+                font-weight: 600
+                font-size: 18px
+                line-height: 120%
+                letter-spacing: -0.01em
+                color: $dark-1
+                +s(m)
+                    font-size: 16px
+            div.cart
+                cursor: pointer
+                display: grid
+                align-items: center
+                justify-items: center
+                border-radius: 8px
+                width: 56px
+                height: 56px
+                backdrop-filter: blur(29px)
+                background: $dark-9
+                transition: 0.5s all
+                +s(m)
+                    width: 48px
+                    height: 48px
+                &:hover
+                    background: $dark-8
+                img:first-child
+                    display: block
+                img:last-child
+                    display: none
+                &.active
+                    img:first-child
+                        display: none
+                    img:last-child
+                        display: block
+
+    a.link_area
+        cursor: pointer
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 1
+
+    &:hover
+        border: 1px solid $dark-6
+
+    &.small
+        +s(s)
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 16px
+            div.additional
+                position: absolute
+                top: 16px
+                left: 16px
+            div.preview
+                position: relative
+                border-right: 1px solid #c8ccd2
+                border-bottom: unset
+                padding: unset
+            div.controls
+                top: 0
+            div.cart
+                display: none
+            div.text
+                margin-top: unset
+                margin-bottom: 12px
+
+div.product_row
+    position: relative
+    display: grid
+    grid-template-columns: repeat(9, 1fr)
+    grid-gap: var(--grid-gap)
+    border-radius: 10px
+    padding: 24px 0
+    background: $white
+    border: 1px solid transparent
+    +s(m)
+        padding: 16px 0
+
+    div.preview
+        position: relative
+        display: grid
+        align-items: center
+        justify-items: center
+        grid-column: 2 span
+        z-index: 4
+        +s(m)
+            grid-column: 3 span
+            position: static
+
+        img
+            height: 180px
+            aspect-ratio: 1 / 1
+            object-fit: contain
+            +s(l)
+                height: 120px
+            +s(m)
+                height: 80px
+
+        div.controls
+            position: absolute
+            top: 0px
+            right: 0px
+            display: grid
+            grid-gap: 8px
+            z-index: 2
+            +s(m)
+                flex-direction: column
+                top: 16px
+                right: 16px
+                grid-auto-flow: column
+                grid-auto-columns: max-content
+
+            div.favourite
+                cursor: pointer
+                display: grid
+                svg
+                    path
+                        fill: transparent
+                        transition: all 0.3s
+                    +s(m)
+                        width: 20px
+                        height: 20px
+                &:hover
+                    svg
+                        path
+                            fill: $red
+                            stroke: $red
+                &.active
+                    svg
+                        path
+                            fill: $red
+                            stroke: $red
+
+            div.compare
+                cursor: pointer
+                display: grid
+                svg
+                    path
+                        transition: all 0.3s
+                    +s(m)
+                        width: 20px
+                        height: 20px
+                &:hover
+                    svg
+                        path
+                            fill: $red
+                &.active
+                    svg
+                        path
+                            // fill: $blue
+                            fill: $red
+
+    div.additional
+        z-index: 2
+        +s(m)
+            position: absolute
+            top: 16px
+            grid-column: 4 / 12
+        a.tag
+            cursor: pointer
+            border-radius: 4px
+            padding: 2px 6px
+            background: $yellow
+            font-weight: 500
+            font-size: 12px
+            line-height: 110%
+            letter-spacing: -0.01em
+            text-align: center
+            color: $dark-1
+            transition: all 0.3s
+            +s(m)
+                font-size: 10px
+
+            &:hover
+                background: #F5DD00
+
+    div.description
+        position: relative
+        display: grid
+        z-index: 3
+        grid-column: 6 span
+        padding-right: 24px
+        +s(l)
+            padding-right: 16px
+        +s(m)
+            padding-top: 36px
+
+        div.text
+            display: grid
+            grid-template-columns: 1fr max-content
+            grid-gap: var(--grid-gap)
+            font-weight: 500
+            font-size: 18px
+            line-height: 120%
+            letter-spacing: -0.01em
+            color: $dark-1
+            padding-bottom: 30px
+            border-bottom: 1px solid $dark-8
+            +s(l)
+                font-size: 16px
+            +s(m)
+                grid-template-columns: 1fr max-content
+                // padding-bottom: 16px
+                grid-gap: 16px
+                align-items: center
+
+            span.text
+                display: block
+                max-width: 360px
+                +s(m)
+                    grid-column: 2 span
+
+            div.trash
+                cursor: pointer
+                display: grid
+                align-items: center
+                justify-items: center
+                border-radius: 10px
+                width: 56px
+                height: 56px
+                backdrop-filter: blur(15px)
+                background: $dark-9
+                transition: all 0.5s
+                +s(l)
+                    width: 48px
+                    height: 48px
+                +s(m)
+                    background: unset
+                    width: unset
+                    height: unset
+                svg
+                    path
+                        fill: $white
+
+                &:hover
+                    background: $dark-8
+
+            span.price
+                display: none
+                +s(m)
+                    display: block
+
+        div.order
+            display: grid
+            align-items: center
+            grid-template-columns: max-content 1fr max-content
+            margin-bottom: -24px
+            +s(m)
+                margin-bottom: -16px
+                grid-template-columns: 1fr max-content
+
+            div.quantity
+                justify-self: center
+                margin-left: 160px
+                +s(l)
+                    margin-left: unset
+                +s(m)
+                    justify-self: start
+                    margin-left: -14px
+                input
+                    text-align: center
+
+            span.count
+                display: grid
+                align-items: center
+                justify-items: center
+                height: 56px
+                +s(l)
+                    justify-items: start
+                    height: 48px
+
+        span.price
+            font-weight: 600
+            font-size: 18px
+            line-height: 120%
+            letter-spacing: -0.01em
+            color: $dark-1
+            +s(l)
+                font-size: 16px
+
+            &:first-child
+                +s(m)
+                    display: none
+
+    a.link_area
+        cursor: pointer
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 1
+
+div.catalog_card
+    position: relative
+    width: 100%
+    padding: 32px
+    border-radius: 10px
+    overflow: clip
+    min-height: 400px
+    transition: all 0.5s
+    display: grid
+    grid-template-rows: max-content 1fr
+    +s(l)
+        padding: 24px
+        min-height: 310px
+    +s(s)
+        min-height: 240px
+
+    h4
+        position: relative
+        width: calc(100% - 80px)
+        z-index: 3
+        +s(l)
+            width: calc(100% - 68px)
+
+    div.accordion_menu
+        display: grid
+        grid-template-rows: 0fr
+        transition: all 0.5s
+
+        div.overflow
+            overflow: hidden
+            display: grid
+            grid-template-rows: 1fr max-content
+
+        ul
+            display: grid
+            grid-gap: 10px
+            padding-top: 24px
+            position: relative
+            z-index: 3
+            align-content: start
+            margin-bottom: 40px
+            +s(l)
+                padding-top: 16px
+                margin-bottom: 24px
+        a.button
+            position: relative
+            padding: 20px 40px
+            z-index: 3
+    div.button
+        cursor: pointer
+        display: grid
+        align-items: center
+        justify-items: center
+        position: absolute
+        top: 32px
+        right: 32px
+        border-radius: 8px
+        width: 56px
+        height: 56px
+        backdrop-filter: blur(15px)
+        background: $dark-9
+        z-index: 3
+        transition: all 0.5s
+        +s(l)
+            top: 24px
+            right: 24px
+            width: 48px
+            height: 48px
+        img.minus
+            display: none
+        &:hover
+            background: $dark-8
+    span.count
+        position: absolute
+        left: 32px
+        bottom: 32px
+        z-index: 1
+        +s(l)
+            font-size: 14px
+            left: 24px
+            bottom: 24px
+    img.preview
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 0
+        object-fit: cover
+
+    &::after
+        content: ''
+        position: absolute
+        top: 16px
+        right: 16px
+        width: 0
+        height: 0
+        backdrop-filter: blur(15px)
+        background: rgba(237, 238, 240, 0.6)
+        border-radius: 10px
+        border: 1px solid transparent
+        z-index: 2
+        transition: all 0.5s
+        +s(l)
+            top: 12px
+            right: 12px
+
+    &.opened
+        div.accordion_menu
+            grid-template-rows: 1fr
+        div.button
+            background: $white
+            img.plus
+                display: none
+            img.minus
+                display: block
+        &::after
+            width: calc(100% - 32px)
+            height: calc(100% - 32px)
+            border: 1px solid $dark-7
+            +s(l)
+                width: calc(100% - 24px)
+                height: calc(100% - 24px)
+
+div.order_card
+    border-radius: 10px
+    background: $white
+
+    div.main
+        position: relative
+        display: grid
+        grid-template-columns: repeat(9, 1fr)
+        grid-gap: var(--grid-gap)
+        align-items: center
+        padding: 16px 0px
+        +s(l)
+            align-items: start
+        +s(m)
+            grid-template-columns: max-content 1fr
+            grid-gap: 16px
+
+        div.number
+            margin-left: 32px
+            +s(l)
+                margin-left: 24px
+        div.number,
+        div.count,
+        div.price
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            align-items: end
+            grid-gap: 8px
+            grid-column: 2 span
+            +s(l)
+                display: grid
+                grid-auto-flow: row
+            +s(m)
+                grid-column: unset
+                margin-left: 16px
+                grid-auto-flow: column
+        div.count
+            +s(m)
+                grid-column: 2 span
+        div.status
+            grid-column: 2 span
+            border-radius: 4px
+            padding: 2px 6px 3px
+            width: max-content
+            font-weight: 500
+            font-size: 14px
+            line-height: 110%
+            letter-spacing: -0.01em
+            text-align: center
+            color: $white
+            +s(m)
+                position: relative
+                grid-column: unset
+                justify-self: end
+                font-size: 12px
+                right: 16px
+            &.way
+                background: $light-blue
+            &.delivered
+                background: $blue
+        strong
+            font-weight: 500
+            font-size: 24px
+            line-height: 110%
+            letter-spacing: -0.02em
+            color: #000
+            +s(l)
+                font-size: 20px
+        span
+            font-weight: 500
+            font-size: 14px
+            line-height: 110%
+            letter-spacing: -0.01em
+            color: $dark-4
+            margin-bottom: 2px
+            +s(m)
+                font-size: 12px
+        div.button
+            cursor: pointer
+            display: grid
+            align-items: center
+            justify-items: center
+            border-radius: 8px
+            width: 56px
+            height: 56px
+            backdrop-filter: blur(15px)
+            background: $dark-9
+            z-index: 3
+            transition: all 0.5s
+            justify-self: end
+            margin-right: 24px
+            +s(l)
+                width: 48px
+                height: 48px
+            +s(m)
+                position: absolute
+                bottom: 16px
+                right: 16px
+                margin: unset
+            img.minus
+                display: none
+            &:hover
+                background: $dark-8
+
+    div.details
+        display: grid
+        grid-template-rows: 0fr
+        transition: all 0.5s
+        div.overflow
+            overflow: hidden
+        div.payment
+            display: grid
+            grid-template-columns: repeat(9, 1fr)
+            grid-gap: var(--grid-gap)
+            padding-top: 24px
+            padding-bottom: 24px
+            border-bottom: 1px solid $dark-7
+            +s(m)
+                grid-template-columns: 1fr
+                padding: 16px
+
+            div.paid
+                margin-left: 32px
+                grid-column: 2 span
+                +s(l)
+                    margin-left: 24px
+                +s(m)
+                    margin-left: unset
+                    grid-column: unset
+                    display: grid
+                    grid-template-columns: max-content 1fr
+                    grid-gap: 10px
+                    align-items: end
+
+            div.remain
+                grid-column: 2 span
+                +s(m)
+                    display: grid
+                    grid-template-columns: max-content 1fr
+                    grid-column: unset
+                a.button
+                    margin-top: 16px
+                    background: $dark-1
+                    color: $white
+                    +s(l)
+                        padding-top: 12px
+                        padding-bottom: 12px
+                        height: auto
+                    +s(m)
+                        margin-top: unset
+                        justify-self: end
+                    &:hover
+                        background: $red
+
+            div.adress
+                grid-column: 5 span
+                +s(m)
+                    grid-column: unset
+
+            span.status
+                border-radius: 4px
+                padding: 2px 6px 3px
+                width: max-content
+                font-weight: 500
+                font-size: 14px
+                line-height: 110%
+                letter-spacing: -0.01em
+                text-align: center
+                color: $white
+                margin-top: 16px
+                +s(m)
+                    font-size: 12px
+                    margin-top: 10px
+                &.paid
+                    background: $light-blue
+                &.delivered
+                    background: $blue
+
+            span
+                display: block
+                font-weight: 500
+                font-size: 14px
+                line-height: 110%
+                letter-spacing: -0.01em
+                color: $dark-4
+                margin-bottom: 4px
+
+            strong
+                display: block
+                font-weight: 500
+                font-size: 18px
+                line-height: 120%
+                letter-spacing: -0.01em
+                +s(l)
+                    font-size: 16px
+
+        div.product_row
+            &::after
+                content: ''
+                position: absolute
+                left: 24px
+                bottom: 0
+                display: block
+                height: 1px
+                width: calc(100% - 48px)
+                background: $dark-7
+                z-index: 1
+
+        div.buttons
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: 1fr
+            grid-gap: var(--grid-gap)
+            padding: 24px
+            +s(m)
+                padding: 16px
+            +s(s)
+                grid-auto-flow: row
+            button, a.button
+                width: 100%
+                span
+                    text-align: center
+
+    &.opened
+        div.main
+            border-bottom: 1px solid $dark-7
+            div.button
+                img.plus
+                    display: none
+                img.minus
+                    display: block
+        div.details
+            grid-template-rows: 1fr
+
+a.category_card
+    display: grid
+    grid-template-rows: max-content 1fr max-content
+    align-content: start
+    position: relative
+    min-height: 450px
+    border-radius: 10px
+    overflow: clip
+    padding: 32px
+    z-index: 1
+    +s(l)
+        min-height: 362px
+    +s(m)
+        min-height: 226px
+        padding: 16px
+
+    span
+        font-weight: 500
+        font-size: 18px
+        line-height: 120%
+        letter-spacing: -0.01em
+        color: $white
+        margin-bottom: 78px
+        +s(l)
+            margin-bottom: 55px
+        +s(m)
+            font-size: 16px
+            margin-bottom: 34px
+
+    h3
+        font-weight: 500
+        font-size: 42px
+        line-height: 110%
+        letter-spacing: -0.02em
+        color: $white
+        +s(l)
+            font-size: 36px
+        +s(m)
+            font-size: 26px
+
+    div.arrow
+        display: grid
+        align-items: center
+        justify-items: center
+        border-radius: 10px
+        width: 56px
+        height: 56px
+        backdrop-filter: blur(15px)
+        background: rgba(255, 255, 255, 0.1)
+        transition: all 0.5s
+        margin-top: 24px
+        +s(m)
+            width: 48px
+            height: 48px
+
+    div.preview
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: -2
+        transition: all 0.5s
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+        &::after
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            background: #001E41
+            opacity: 0.5
+            z-index: 0
+
+    &:hover
+        div.arrow
+            background: $red
+        div.preview
+            top: -10px
+            left: -10px
+            right: -10px
+            bottom: 0px
+
+div.section_title
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+    grid-gap: var(--grid-gap)
+    margin-bottom: 40px
+    +s(l)
+        margin-bottom: 32px
+    +s(m)
+        grid-template-columns: 1fr
+        grid-gap: 16px
+        margin-bottom: 24px
+
+    div.subtitle
+        grid-column: 3 span
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: var(--grid-gap)
+        margin-top: 10px
+        +s(m)
+            grid-column: unset
+
+        img
+            +s(l)
+                display: none
+
+        span
+            font-weight: 500
+            font-size: 14px
+            letter-spacing: -0.01em
+            color: $dark-1
+            +s(m)
+                font-size: 12px
+
+    h2, h1
+        grid-column: 6 span
+        +s(l)
+            grid-column: 5 span
+        +s(m)
+            grid-column: unset
+
+    div.title_count
+        display: flex
+        gap: 4px
+        grid-column: 6 span
+        +s(l)
+            grid-column: 5 span
+        +s(m)
+            grid-column: unset
+        span
+            margin-top: 4px
+            font-weight: 500
+            font-size: 14px
+            line-height: 110%
+            letter-spacing: -0.01em
+            color: $dark-1
+            +s(m)
+                font-size: 12px
+
+    div.navigation
+        grid-column: 3 span
+        display: flex
+        align-items: flex-end
+        justify-content: space-between
+        gap: var(--grid-gap)
+        +s(l)
+            grid-column: 4 span
+        +s(m)
+            grid-column: unset
+            display: none
+
+        a.button
+            display: flex
+            +s(m)
+                display: none
+
+    &.inner
+        div.subtitle
+            img
+                +s(l)
+                    display: block
+                +s(m)
+                    display: none
+
+div.swiper-navigation
+    user-select: none
+    display: flex
+    div.arrow
+        cursor: pointer
+        display: grid
+        align-items: center
+        justify-items: center
+        border-radius: 10px
+        width: 56px
+        height: 56px
+        backdrop-filter: blur(29px)
+        background: $red
+        transition: all 0.5s
+        &:last-child
+            img
+                transform: rotate(180deg)
+
+        &.swiper-button-disabled
+            pointer-events: none
+            background: #FFECE4
+
+        &:hover
+            background: #EB5417
+
+div.range
+    display: grid
+    grid-gap: 12px
+    margin-top: 5px
+
+    div.tracker
+        position: relative
+        height: 14px
+        margin-left: 7px
+        margin-right: 7px
+        div.track
+            pointer-events: none
+            background-color: $dark-1
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            width: 100%
+            height: 2px
+            z-index: 1
+        input[type=range]
+            width: 100%
+            height: 14px
+            position: absolute
+            top: 0
+            border: none
+            padding: unset
+            appearance: none
+            outline: none
+            pointer-events: none
+            background-color: transparent
+            z-index: 2
+            &::-webkit-slider-thumb
+                appearance: none
+                width: 14px
+                height: 14px
+                background-color: $red
+                border-radius: 50%
+                pointer-events: auto
+                cursor: pointer
+                z-index: 2
+                transform: translateX(-7px)
+            &::-moz-range-thumb
+                appearance: none
+                width: 14px
+                height: 14px
+                background-color: $red
+                border-radius: 50%
+                pointer-events: auto
+                cursor: pointer
+                z-index: 2
+                border: unset
+            &:hover
+                border: unset !important
+            &:nth-child(2)
+                &::-webkit-slider-thumb
+                    transform: translateX(7px)
+
+        &::after
+            content: ''
+            position: absolute
+            top: 50%
+            left: 0
+            width: 100%
+            height: 1px
+            background-color: $dark-7
+            z-index: -1
+            transform: translateY(-50%)
+
+    div.values
+        display: flex
+        justify-content: space-between
+        font-weight: 500
+        font-size: 12px
+        color: rgba(0, 0, 0, 0.5)
+        margin-top: -10px
+
+    div.inputs
+        display: grid
+        grid-template-columns: 1fr max-content 1fr
+        align-items: center
+        grid-gap: 10px
+
+        input
+            border: 1px solid $dark-7
+            border-radius: 10px
+            padding: 12px 16px
+            font-weight: 500
+            font-size: 18px
+            line-height: 120%
+            letter-spacing: -0.01em
+            color: $dark-1
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button
+            -webkit-appearance: none
+
+form:invalid
+    button.black
+        pointer-events: none
+        background: white
+        span
+            color: $dark-7

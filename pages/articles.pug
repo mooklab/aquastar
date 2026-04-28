@@ -1,0 +1,35 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/articles.css")
+
+block content
+
+    section.articles
+        div.container
+            
+            div.section_title.inner
+                div.subtitle
+                    img(src="images/subtitle.svg")
+                div.title_count
+                    h1 Статьи
+                    span 435
+
+            div.list
+                +article('images/5.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'small')
+                +article('images/6.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'big')
+                +article('images/7.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'small')
+                +article('images/5.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'big')
+                +article('images/6.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'small')
+                +article('images/7.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'big')
+                +article('images/5.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'small')
+                +article('images/6.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'big')
+                +article('images/7.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'small')
+                +article('images/5.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'big')
+                +article('images/6.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'small')
+                +article('images/7.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'big')
+
+            
+                    
+    

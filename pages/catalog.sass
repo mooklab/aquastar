@@ -1,0 +1,20 @@
+@use '../components/common/sass/_mixins' as *
+@use '../components/common/sass/_colors' as *
+
+section.catalog
+
+    div.container
+        padding-top: var(--section-gap)
+        padding-bottom: var(--section-gap)
+
+    div.section_title.inner
+        margin-bottom: var(--section-gap)
+
+    div.list
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: var(--grid-gap)
+        +s(l)
+            grid-template-columns: repeat(2, 1fr)
+        +s(s)
+            grid-template-columns: 1fr

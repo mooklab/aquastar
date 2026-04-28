@@ -1,0 +1,199 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/product.css")
+
+block content
+
+    section.product
+        div.container
+            
+            div.gallery
+                div.swiper.thumbs
+                    div.swiper-wrapper
+                        div.swiper-slide: img(src="images/1.webp", alt="")
+                        div.swiper-slide: img(src="images/1.webp", alt="")
+                        div.swiper-slide: img(src="images/1.webp", alt="")
+                        div.swiper-slide: img(src="images/1.webp", alt="")
+                div.swiper.images
+                    div.swiper-wrapper
+                        div.swiper-slide: img(src="images/1.webp", alt="")
+                        div.swiper-slide: img(src="images/1.webp", alt="")
+                        div.swiper-slide: img(src="images/1.webp", alt="")
+                        div.swiper-slide: img(src="images/1.webp", alt="")
+
+            div.about
+                span.tag Exactus
+                div.controls
+                    div(onclick="this.classList.toggle('active')").favourite
+                        include ../images/favourite.svg
+                    div(onclick="this.classList.toggle('active')").compare
+                        include ../images/compare.svg
+                    div(onclick="this.classList.toggle('active')").share
+                        include ../images/share.svg
+                div.text
+                    span Насосное оборудование
+                    h1 Насос Aquaviva LX WTB300T (380В, 60 м3/ч, 4HP)
+                    p Насос без префильтра AquaViva LX WTB300T/ZWE300T для обслуживания бассейнов. Используется для создания напора и циркуляции воды. Может применяться для аттракционов и противотоков. Муфты в комплекте. Насос высокой мощности.
+
+                div.price
+                    h2 75 000 ₽
+                    img(src="images/product_arrow.svg")
+
+                div.quantity
+                    div.minus
+                        include ../images/category_minus.svg
+                    input(type="number", min="1", max="99", value="1")
+                    div.plus
+                        include ../images/category_plus.svg
+
+                a(href="#").button.red
+                    span Добавить в козину
+                    div.icon
+                        img(src="images/cart.svg")
+
+    section.description
+        div.container
+            span Описание
+            div
+                p Мощный насос AquaViva LX WTB300T рекомендован для напорной подачи воды в бассейнах и других гидротехнических системах. Эффективное решение для встречного течения и аттракционов. Эксплуатационные качества насоса позволяют также применять его в сфере марикультуры и водообеспечения.
+                p Класс термозащиты TI.USA позволяет AquaViva LX WTB300T служить без сбоев длительное время. Минимальная надобность обслуживания и ремонта обусловлена продуманной конструкцией насоса. Модель выполнена из долговечных материалов, которые не боятся коррозии и отлично выдерживают внешнее неблагоприятное воздействие. Насос имеет увеличенный диаметр напорного патрубка для максимально мощной подачи водного потока.
+                p Сочетание ценовой политики, рабочих показателей и конструктивных преимуществ делает насосы Aquaviva LX очень востребованными на современном рынке.
+
+    section.tabs
+        div.container
+
+            div.tab_captions
+                span(onclick="goToTab(this, 0)").active Характеристики
+                span(onclick="goToTab(this, 1)") Комплектация
+                span(onclick="goToTab(this, 2)") Документация
+
+            fieldset(tabindex="0").select
+                div.select_choice
+                    input(type="radio", id="tab_1", name="product_tab", checked)
+                    span Характеристики
+                    input(type="radio", id="tab_2", name="product_tab")
+                    span Комплектация
+                    input(type="radio", id="tab_3", name="product_tab")
+                    span Документация
+                    img(src="images/select_arrow.svg", alt="").arrow
+                div.select_dropdown
+                    div.select_dropdown_overflow
+                        div.select_dropdown_content
+                            label(for="tab_1", onclick="goToTab(this, 0)") Характеристики
+                            label(for="tab_2", onclick="goToTab(this, 1)") Комплектация
+                            label(for="tab_3", onclick="goToTab(this, 2)") Документация
+
+            div.swiper.tab_content
+                div.swiper-wrapper
+                    div.swiper-slide
+                        div.table
+                            div.row
+                                span Длина (м)
+                                hr
+                                span 5.49
+                            div.row
+                                span Бренд	
+                                hr
+                                span INTEX
+                            div.row
+                                span Ширина (м)
+                                hr
+                                span 2.74
+                            div.row
+                                span Страна-производитель	
+                                hr
+                                span Китай
+                            div.row
+                                span Объем (л)
+                                hr
+                                span 17203
+                            div.row
+                                span Насос-фильтр (л/ч)
+                                hr
+                                span 5700
+                            div.row
+                                span Размер упаковки (см)
+                                hr
+                                span 62 х 66 х 151
+                    div.swiper-slide
+                        div.text
+                            h4 Комплектация
+                            p Мощный насос AquaViva LX WTB300T рекомендован для напорной подачи воды в бассейнах и других гидротехнических системах. Эффективное решение для встречного течения и аттракционов. Эксплуатационные качества насоса позволяют также применять его в сфере марикультуры и водообеспечения.
+                            p Класс термозащиты TI.USA позволяет AquaViva LX WTB300T служить без сбоев длительное время. Минимальная надобность обслуживания и ремонта обусловлена продуманной конструкцией насоса. Модель выполнена из долговечных материалов, которые не боятся коррозии и отлично выдерживают внешнее неблагоприятное воздействие. Насос имеет увеличенный диаметр напорного патрубка для максимально мощной подачи водного потока.
+                            p Сочетание ценовой политики, рабочих показателей и конструктивных преимуществ делает насосы Aquaviva LX очень востребованными на современном рынке.
+                    div.swiper-slide
+                        div.text
+                            h4 Документация
+                            p Мощный насос AquaViva LX WTB300T рекомендован для напорной подачи воды в бассейнах и других гидротехнических системах. Эффективное решение для встречного течения и аттракционов. Эксплуатационные качества насоса позволяют также применять его в сфере марикультуры и водообеспечения.
+                            p Сочетание ценовой политики, рабочих показателей и конструктивных преимуществ делает насосы Aquaviva LX очень востребованными на современном рынке.
+
+    section.popular
+        div.container
+            
+            div.section_title
+                div.subtitle
+                    img(src="images/subtitle.svg")
+                    span Рекомендуемые товары
+                h2 Рекомендуем добавить к заказу
+                div.navigation
+                    div.swiper-navigation
+                        div.arrow
+                            img(src="images/swiper_arrow.svg")
+                        div.arrow
+                            img(src="images/swiper_arrow.svg")
+
+            div.swiper.products
+                div.swiper-wrapper
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+
+    section.popular
+        div.container
+            
+            div.section_title
+                div.subtitle
+                    img(src="images/subtitle.svg")
+                    span Похожие товары
+                h2 Похожие товары
+                div.navigation
+                    div.swiper-navigation
+                        div.arrow
+                            img(src="images/swiper_arrow.svg")
+                        div.arrow
+                            img(src="images/swiper_arrow.svg")
+
+            div.swiper.products
+                div.swiper-wrapper
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+    

@@ -1,0 +1,71 @@
+@use '../components/common/sass/_mixins' as *
+@use '../components/common/sass/_colors' as *
+
+section.article
+
+    div.container
+        padding-top: var(--section-gap)
+        padding-bottom: var(--section-gap)
+
+    div.section_title.inner
+        margin-bottom: 0px
+        div.subtitle
+            +s(m)
+                display: none
+        h1
+            grid-column: 7 span
+            +s(m)
+                grid-column: 1 span
+
+    div.content
+        display: grid
+        grid-template-columns: repeat(12, 1fr)
+        grid-gap: 0 var(--grid-gap)
+        +s(m)
+            grid-template-columns: 1fr
+
+        h2, h3, h4
+            display: block
+            margin-top: 40px
+            margin-bottom: 40px
+            +s(l)
+                margin-top: 32px
+                margin-bottom: 32px
+            +s(m)
+                margin-top: 24px
+                margin-bottom: 24px
+
+        p
+            display: block
+            margin-bottom: 1em
+            font-weight: 500
+            font-size: 18px
+            line-height: 110%
+            letter-spacing: -0.01em
+            color: $dark-3
+            +s(l)
+                font-size: 16px
+                line-height: 120%
+
+        img
+            display: block
+            width: 100%
+            margin-top: 40px
+            margin-bottom: 40px
+            border-radius: 6px
+            +s(l)
+                margin-top: 32px
+                margin-bottom: 32px
+            +s(m)
+                margin-top: 24px
+                margin-bottom: 24px
+
+        .full
+            grid-column: 1 / 13
+            +s(m)
+                grid-column: 1 span
+
+        .short
+            grid-column: 4 / 11
+            +s(m)
+                grid-column: 1 span

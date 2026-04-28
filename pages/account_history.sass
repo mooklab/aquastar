@@ -1,0 +1,65 @@
+@use '../components/common/sass/_mixins' as *
+@use '../components/common/sass/_colors' as *
+
+section.account_history
+
+    div.container
+        padding-top: var(--section-gap)
+        padding-bottom: var(--section-gap)
+
+    div.section_title.inner
+        margin-bottom: var(--section-gap)
+        div.subtitle
+            +s(m)
+                display: none
+        h1
+            grid-column: 7 span
+            +s(m)
+                grid-column: 1 span
+
+    div.account
+        display: grid
+        align-items: start
+        grid-template-columns: repeat(12, 1fr)
+        grid-gap: var(--grid-gap)
+        +s(m)
+            grid-template-columns: 1fr
+            grid-gap: 24px
+
+        div.side
+            display: grid
+            grid-gap: 24px
+            grid-column: 3 span
+            +s(m)
+                grid-column: unset
+                display: flex
+                gap: 16px
+                overflow: auto
+                &::-webkit-scrollbar
+                    display: none
+                    opacity: 0
+
+            a
+                display: block
+                font-weight: 500
+                font-size: 28px
+                line-height: 120%
+                letter-spacing: -0.02em
+                color: $dark-4
+                white-space: nowrap
+                +s(l)
+                    font-size: 20px
+                +s(m)
+                    font-size: 16px
+
+                &.active
+                    color: $dark-1
+
+        div.content
+            grid-column: 9 span
+            display: grid
+            grid-gap: 16px
+            +s(l)
+                grid-gap: 8px
+            +s(m)
+                grid-column: unset

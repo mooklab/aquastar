@@ -1,0 +1,252 @@
+section.shops div.container {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+@media (max-width: 960px) {
+  section.shops div.section_title br {
+    display: none;
+  }
+}
+section.shops div.table div.row {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: var(--grid-gap);
+  border-radius: 10px;
+}
+section.shops div.table div.row:nth-child(2n) {
+  background: white;
+}
+@media (max-width: 960px) {
+  section.shops div.table div.row {
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+    padding: 16px;
+  }
+  section.shops div.table div.row > * {
+    grid-column: 1 span !important;
+  }
+}
+@media (max-width: 960px) {
+  section.shops div.table div.head {
+    display: none;
+  }
+}
+section.shops div.table div.row > *:nth-child(1) {
+  grid-column: 6 span;
+}
+section.shops div.table div.row > *:nth-child(2) {
+  grid-column: 3 span;
+}
+section.shops div.table div.row > *:nth-child(3) {
+  grid-column: 2 span;
+}
+section.shops div.table div.row > *:nth-child(4) {
+  grid-column: 1 span;
+  justify-self: center;
+}
+@media (max-width: 960px) {
+  section.shops div.table div.row > *:nth-child(4) {
+    justify-self: start;
+  }
+}
+section.shops div.table strong, section.shops div.table span {
+  padding: 24px 32px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+}
+@media (max-width: 1280px) {
+  section.shops div.table strong, section.shops div.table span {
+    font-size: 16px;
+  }
+}
+@media (max-width: 960px) {
+  section.shops div.table strong, section.shops div.table span {
+    padding: unset;
+  }
+}
+section.shops div.table span {
+  color: #6c7787;
+}
+section.shops div.table strong {
+  color: #2b333f;
+}
+section.shops div.table strong.nowrap {
+  white-space: nowrap;
+}
+section.shops div.table strong::before {
+  content: attr(data-title);
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  color: #6c7787;
+  margin-bottom: 4px;
+}
+section.shops div.table a.pin {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  width: 48px;
+  height: 48px;
+}
+
+section.contacts div.container {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+section.contacts div.section_title.inner {
+  margin-bottom: 0px;
+}
+@media (max-width: 960px) {
+  section.contacts div.section_title.inner div.subtitle {
+    display: none;
+  }
+}
+section.contacts div.section_title.inner h1 {
+  grid-column: 7 span;
+}
+@media (max-width: 960px) {
+  section.contacts div.section_title.inner h1 {
+    grid-column: 1 span;
+  }
+}
+section.contacts div.contacts,
+section.contacts div.requisite {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: var(--grid-gap);
+  margin-top: var(--section-gap);
+}
+@media (max-width: 960px) {
+  section.contacts div.contacts,
+  section.contacts div.requisite {
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+  }
+}
+section.contacts div.contacts span.subtitle,
+section.contacts div.requisite span.subtitle {
+  display: block;
+  grid-column: 3 span;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  color: #2b333f;
+}
+@media (max-width: 1280px) {
+  section.contacts div.contacts span.subtitle,
+  section.contacts div.requisite span.subtitle {
+    font-size: 16px;
+  }
+}
+@media (max-width: 960px) {
+  section.contacts div.contacts span.subtitle,
+  section.contacts div.requisite span.subtitle {
+    grid-column: 1 span;
+  }
+}
+section.contacts div.contacts div.list,
+section.contacts div.requisite div.list {
+  grid-column: 9 span;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--grid-gap);
+}
+@media (max-width: 960px) {
+  section.contacts div.contacts div.list,
+  section.contacts div.requisite div.list {
+    grid-column: 1 span;
+  }
+}
+@media (max-width: 640px) {
+  section.contacts div.contacts div.list,
+  section.contacts div.requisite div.list {
+    grid-template-columns: 1fr;
+  }
+}
+section.contacts div.contacts div.list div.item,
+section.contacts div.requisite div.list div.item {
+  display: grid;
+  grid-gap: 8px;
+  border-bottom: 1px solid #c8ccd2;
+  padding-bottom: 24px;
+}
+@media (max-width: 1280px) {
+  section.contacts div.contacts div.list div.item,
+  section.contacts div.requisite div.list div.item {
+    padding-bottom: 16px;
+  }
+}
+section.contacts div.contacts div.list div.item span,
+section.contacts div.requisite div.list div.item span {
+  display: block;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  color: #6c7787;
+}
+@media (max-width: 1280px) {
+  section.contacts div.contacts div.list div.item span,
+  section.contacts div.requisite div.list div.item span {
+    font-size: 16px;
+  }
+}
+section.contacts div.contacts div.list div.item a, section.contacts div.contacts div.list div.item strong,
+section.contacts div.requisite div.list div.item a,
+section.contacts div.requisite div.list div.item strong {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  color: #2b333f;
+}
+@media (max-width: 1280px) {
+  section.contacts div.contacts div.list div.item a, section.contacts div.contacts div.list div.item strong,
+  section.contacts div.requisite div.list div.item a,
+  section.contacts div.requisite div.list div.item strong {
+    font-size: 16px;
+  }
+}
+section.contacts div.contacts div.list div.item:nth-last-child(1), section.contacts div.contacts div.list div.item:nth-last-child(2),
+section.contacts div.requisite div.list div.item:nth-last-child(1),
+section.contacts div.requisite div.list div.item:nth-last-child(2) {
+  border: unset;
+  padding-bottom: unset;
+}
+section.contacts div.contacts div.list div.socials,
+section.contacts div.requisite div.list div.socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 32px;
+}
+@media (max-width: 1280px) {
+  section.contacts div.contacts div.list div.socials,
+  section.contacts div.requisite div.list div.socials {
+    gap: 16px;
+  }
+}
+@media (max-width: 960px) {
+  section.contacts div.contacts div.list div.socials,
+  section.contacts div.requisite div.list div.socials {
+    gap: 8px;
+  }
+}
+section.contacts div.contacts div.list div.socials b,
+section.contacts div.requisite div.list div.socials b {
+  color: #ff682b;
+}/*# sourceMappingURL=contacts.css.map */

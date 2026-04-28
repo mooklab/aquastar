@@ -1,0 +1,174 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+mixin category(title)
+    div.category
+        div(onclick="this.parentNode.classList.toggle('opened')").name
+            img(src="images/category_plus.svg").plus
+            img(src="images/category_minus.svg").minus
+            strong.title= title
+            strong.count 2
+        div.subcategories
+            div.overflow
+                ul
+                    li Фильтрация
+                    li Насосное оборудование
+                    li Дезинфекция
+                    li Подогрев
+                    li Дозирование и контроль
+
+block links
+    link(rel="stylesheet", href="css/category.css")
+
+block content
+
+    section.category
+        div.container
+            
+            div.section_title.inner
+                div.subtitle
+                    img(src="images/subtitle.svg")
+                div.title_count
+                    h1 Бассейны и SPA
+                    span 435
+
+            div.products
+                span.side_title Каталог
+                div.tags Фильтрация, Дезинфекция
+                a(onclick="document.querySelector('div.popup.filter').classList.add('opened')").button.red
+                    span Фильтр и сортировка
+                    div.icon
+                        img(src="images/filter.svg")
+
+                div.side
+                    +category('Бассейны и SPA')
+                    +category('Оборудование для бассейна')
+                    +category('Пылесосы для бассейна')
+                    +category('Отделочные материалы')
+                    +category('Фонтаны')
+                    +category('Тепловые насосы для дома')
+                    +category('Запчасти')
+                    +category('Каяки')
+                    +category('Брендированная продукция')
+                    +category('Аквапарки')
+                    +category('Закладные для бассейна')
+                    +category('Накрытия на бассейны')
+                    +category('Детские товары')
+                    +category('Аквафитнес и отдых на воде')
+                    +category('Трубы и фитинги')
+                    +category('Химия для бассейна')
+                    +category('Аксессуары для бассейна')
+
+                div.list
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+
+    div.popup.filter
+        div.title
+            h4 Фильтр
+            img(src="images/cross.svg", onclick="this.closest('div.popup').classList.remove('opened')")
+        form
+            div.accordion
+                div.accordion_caption
+                    span Сортировать
+                    div.icon
+                        img(src="images/category_minus.svg").minus
+                        img(src="images/category_plus.svg").plus
+                div.accordion_content
+                    div.overflow
+                        div.checkboxes
+                            label.checkbox
+                                input(type="checkbox") 
+                                span однофазный
+                            label.checkbox
+                                input(type="checkbox") 
+                                span трехфазный
+            div.accordion
+                div.accordion_caption
+                    span Стоимость
+                    div.icon
+                        img(src="images/category_minus.svg").minus
+                        img(src="images/category_plus.svg").plus
+                div.accordion_content
+                    div.overflow
+                        +range('Плотность светодиодов, шт/м', 0, 100000)
+            div.accordion
+                div.accordion_caption
+                    span Давление насоса, м вод.ст.
+                    div.icon
+                        img(src="images/category_minus.svg").minus
+                        img(src="images/category_plus.svg").plus
+                div.accordion_content
+                    div.overflow
+                        div.checkboxes
+                            label.checkbox
+                                input(type="checkbox") 
+                                span однофазный
+                            label.checkbox
+                                input(type="checkbox") 
+                                span трехфазный
+            div.accordion
+                div.accordion_caption
+                    span Материал
+                    div.icon
+                        img(src="images/category_minus.svg").minus
+                        img(src="images/category_plus.svg").plus
+                div.accordion_content
+                    div.overflow
+                        div.checkboxes
+                            label.checkbox
+                                input(type="checkbox") 
+                                span однофазный
+                            label.checkbox
+                                input(type="checkbox") 
+                                span трехфазный
+            div.accordion
+                div.accordion_caption
+                    span Тип насоса
+                    div.icon
+                        img(src="images/category_minus.svg").minus
+                        img(src="images/category_plus.svg").plus
+                div.accordion_content
+                    div.overflow
+                        div.checkboxes
+                            label.checkbox
+                                input(type="checkbox") 
+                                span однофазный
+                            label.checkbox
+                                input(type="checkbox") 
+                                span трехфазный
+            div.accordion
+                div.accordion_caption
+                    span Фазы
+                    div.icon
+                        img(src="images/category_minus.svg").minus
+                        img(src="images/category_plus.svg").plus
+                div.accordion_content
+                    div.overflow
+                        div.checkboxes
+                            label.checkbox
+                                input(type="checkbox") 
+                                span однофазный
+                            label.checkbox
+                                input(type="checkbox") 
+                                span трехфазный
+        div.buttons
+            button.red
+                span Применить
+            button.gray
+                span Сбросить
+                    
+    

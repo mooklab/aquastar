@@ -1,0 +1,22 @@
+section.catalog div.container {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+section.catalog div.section_title.inner {
+  margin-bottom: var(--section-gap);
+}
+section.catalog div.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: var(--grid-gap);
+}
+@media (max-width: 1280px) {
+  section.catalog div.list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  section.catalog div.list {
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=catalog.css.map */

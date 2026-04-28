@@ -1,0 +1,118 @@
+@use '../components/common/sass/_mixins' as *
+@use '../components/common/sass/_colors' as *
+
+section.account_personal
+
+    div.container
+        padding-top: var(--section-gap)
+        padding-bottom: var(--section-gap)
+
+    div.section_title.inner
+        margin-bottom: var(--section-gap)
+        div.subtitle
+            +s(m)
+                display: none
+        h1
+            grid-column: 7 span
+            +s(m)
+                grid-column: 1 span
+
+    div.account
+        display: grid
+        align-items: start
+        grid-template-columns: repeat(12, 1fr)
+        grid-gap: var(--grid-gap)
+        +s(m)
+            grid-template-columns: 1fr
+            grid-gap: 24px
+
+        div.side
+            display: grid
+            grid-gap: 24px
+            grid-column: 3 span
+            +s(m)
+                grid-column: unset
+                display: flex
+                gap: 16px
+                overflow: auto
+                &::-webkit-scrollbar
+                    display: none
+                    opacity: 0
+
+            a
+                display: block
+                font-weight: 500
+                font-size: 28px
+                line-height: 120%
+                letter-spacing: -0.02em
+                color: $dark-4
+                white-space: nowrap
+                +s(l)
+                    font-size: 20px
+                +s(m)
+                    font-size: 16px
+
+                &.active
+                    color: $dark-1
+
+        div.content
+            display: grid
+            grid-gap: var(--section-gap)
+            grid-column: 9 span
+            +s(m)
+                grid-column: unset
+
+            h5
+                display: grid
+                align-items: center
+                grid-template-columns: max-content 1fr
+                grid-gap: 24px
+                margin-bottom: 40px
+                +s(l)
+                    margin-bottom: 24px
+                +s(m)
+                    margin-bottom: 16px
+
+                &:after
+                    content: ''
+                    display: block
+                    height: 1px
+                    width: 100%
+                    background: $dark-7
+
+            div.groups
+                display: grid
+                grid-gap: var(--section-gap)
+
+            div.inputs
+                display: grid
+                grid-template-columns: repeat(6, 1fr)
+                grid-gap: 24px var(--grid-gap)
+                +s(m)
+                    grid-template-columns: repeat(4, 1fr)
+                +s(s)
+                    grid-template-columns: repeat(2, 1fr)
+
+            div.buttons
+                display: grid
+                grid-template-columns: repeat(2, 1fr)
+                grid-gap: var(--grid-gap)
+                +s(s)
+                    grid-template-columns: 1fr
+
+                button
+                    width: 100%
+                    span
+                        text-align: center
+
+            fieldset.input.name,
+            fieldset.input.surname,
+            fieldset.input.birthday,
+            fieldset.input.city,
+            fieldset.input.street
+                grid-column: 2 span
+            fieldset.input.phone,
+            fieldset.input.email
+                grid-column: 3 span
+                +s(l)
+                    grid-column: 2 span

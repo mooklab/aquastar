@@ -1,0 +1,38 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/favourite.css")
+
+block content
+
+    section.favourite
+        div.container
+            
+            div.section_title.inner
+                div.subtitle
+                    img(src="images/subtitle.svg")
+                div.title_count
+                    h1 Избранное
+                    span 435
+
+            div.products
+                a(href="#").button.red
+                    span Cортировка
+                    div.icon
+                        img(src="images/sort.svg")
+                div.list
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                    
+    

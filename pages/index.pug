@@ -1,0 +1,235 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/index.css")
+
+block content
+
+    section.main
+        div.container
+            div.swiper-navigation
+                div.arrow
+                    img(src="images/swiper_arrow.svg")
+                div.arrow
+                    img(src="images/swiper_arrow.svg")
+            div.swiper
+                div.swiper-wrapper
+                    div.swiper-slide
+                        a(href="#").main_card
+                            div.text
+                                h2 #[span Скидка] на первый заказ
+                                span Скидка 10% на первый заказ при подписке на нашу рассылку
+                                div.arrow
+                                    img(src="images/arrow_top_right.svg")
+                            div.preview
+                                img(src="images/9.webp", alt="Переливные бассейны")
+                    div.swiper-slide
+                        a(href="#").main_card
+                            div.text
+                                h2 #[span Акция] «Старый на новый»
+                                span Скидка 10% на первый заказ при подписке на нашу рассылку
+                                div.arrow
+                                    img(src="images/arrow_top_right.svg")
+                            div.preview
+                                img(src="images/10.webp", alt="Переливные бассейны")
+                    div.swiper-slide
+                        a(href="#").main_card
+                            div.text
+                                h2 #[span Скидка] на первый заказ
+                                span Скидка 10% на первый заказ при подписке на нашу рассылку
+                                div.arrow
+                                    img(src="images/arrow_top_right.svg")
+                            div.preview
+                                img(src="images/9.webp", alt="Переливные бассейны")
+                    div.swiper-slide
+                        a(href="#").main_card
+                            div.text
+                                h2 #[span Акция] «Старый на новый»
+                                span Скидка 10% на первый заказ при подписке на нашу рассылку
+                                div.arrow
+                                    img(src="images/arrow_top_right.svg")
+                            div.preview
+                                img(src="images/10.webp", alt="Переливные бассейны")
+        div.background
+            img(src="images/8.webp")
+
+    section.popular
+        div.container
+            
+            div.section_title
+                div.subtitle
+                    img(src="images/subtitle.svg")
+                    span Популярные товары
+                h2 Хиты продаж — #[br]#[span выбирайте лучшее]
+                div.navigation
+                    div.swiper-navigation
+                        div.arrow
+                            img(src="images/swiper_arrow.svg")
+                        div.arrow
+                            img(src="images/swiper_arrow.svg")
+                    a(href="#").button
+                        span Смотреть все
+                        div.icon
+                            img(src="images/arrow_top_right.svg")
+
+            div.swiper.products
+                div.swiper-wrapper
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+                    div.swiper-slide
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽')
+
+            a(href="#").button
+                span Смотреть все
+                div.icon
+                    img(src="images/arrow_top_right.svg")
+
+    section.categories
+        div.container
+            div.list
+                +category('Переливные <br/>бассейны', 'images/2.webp', '34')
+                +category('Стационарные <br/>бассейны', 'images/2.webp', '52')
+
+    section.about
+        div.container
+
+            div.section_title
+                div.subtitle
+                    img(src="images/subtitle.svg")
+                    span О компании
+                h2 Более 20 лет мы занимаем лидирующие позиции на рынке #[span продаж бассейнов и оборудования]
+
+            div.content
+                h4 Наша команда постоянно следит за новыми технологиями и трендами, чтобы предлагать вам только современное и качественное оборудование
+
+                div.advantages
+                    img(src="images/4.webp", alt="Бетонно соблюдаем сроки")
+                    div.tags
+                        span Бетонно соблюдаем сроки
+                        span Поэтапная оплата 
+                        span Фотоотчет о ходе работ 
+                        span Фиксируем цену по договору
+
+                div.additional
+                    h2 В нашем ассортименте — всё для создания идеального водного пространства
+                    h4 стильные бассейны, водные комплексы, спортивно-развлекательные центры и аквапарки
+                    a(href="#").button
+                        span Смотреть каталог
+                        div.icon
+                            img(src="images/arrow_top_right.svg")
+
+    section.brands
+        div.container
+
+            div.section_title
+                div.subtitle
+                    img(src="images/subtitle.svg")
+                    span Производители
+                h2 Только проверенные #[br]#[span производители]
+                div.navigation
+                    div.swiper-navigation
+                        div.arrow
+                            img(src="images/swiper_arrow.svg")
+                        div.arrow
+                            img(src="images/swiper_arrow.svg")
+
+            div.swiper
+                div.swiper-wrapper
+                    div.swiper-slide
+                        img(src="images/brand_1.svg", alt="Tixel")
+                        span Tixel
+                    div.swiper-slide
+                        img(src="images/brand_2.svg", alt="Eeetwell")
+                        span Eeetwell
+                    div.swiper-slide
+                        img(src="images/brand_3.svg", alt="Neurala")
+                        span Neurala
+                    div.swiper-slide
+                        img(src="images/brand_4.svg", alt="Distek")
+                        span Distek
+                    div.swiper-slide
+                        img(src="images/brand_5.svg", alt="Gong")
+                        span Gong
+                    div.swiper-slide
+                        img(src="images/brand_6.svg", alt="Campfire")
+                        span Campfire
+                    div.swiper-slide
+                        img(src="images/brand_1.svg", alt="Tixel")
+                        span Tixel
+                    div.swiper-slide
+                        img(src="images/brand_2.svg", alt="Eeetwell")
+                        span Eeetwell
+                    div.swiper-slide
+                        img(src="images/brand_3.svg", alt="Neurala")
+                        span Neurala
+                    div.swiper-slide
+                        img(src="images/brand_4.svg", alt="Distek")
+                        span Distek
+                    div.swiper-slide
+                        img(src="images/brand_5.svg", alt="Gong")
+                        span Gong
+                    div.swiper-slide
+                        img(src="images/brand_6.svg", alt="Campfire")
+                        span Campfire
+
+    section.articles
+        div.container
+
+            div.section_title
+                div.subtitle
+                    img(src="images/subtitle.svg")
+                    span Статьи
+                h2 Будьте в курсе #[br]последних событий
+                div.navigation
+                    div.swiper-navigation
+                        div.arrow
+                            img(src="images/swiper_arrow.svg")
+                        div.arrow
+                            img(src="images/swiper_arrow.svg")
+                    a(href="#").button
+                        span Смотреть все
+                        div.icon
+                            img(src="images/arrow_top_right.svg")
+
+            div.swiper
+                div.swiper-wrapper
+                    div.swiper-slide
+                        +article('images/5.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'small')
+                    div.swiper-slide
+                        +article('images/6.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'big')
+                    div.swiper-slide
+                        +article('images/7.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'small')
+                    div.swiper-slide
+                        +article('images/5.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'small')
+                    div.swiper-slide
+                        +article('images/6.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'small')
+                    div.swiper-slide
+                        +article('images/7.webp', 'Бетонный или композитный бассейн — что лучше?', '1 Марта 2024', 'small')
+
+            a(href="#").button
+                span Смотреть все
+                div.icon
+                    img(src="images/arrow_top_right.svg")
+
+    include ../components/sections/_shops.pug
+
+
+
+
+
+
+
+

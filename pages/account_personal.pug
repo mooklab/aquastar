@@ -1,0 +1,69 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/account_personal.css")
+
+block content
+
+    section.account_personal
+        div.container
+            
+            div.section_title.inner
+                div.subtitle
+                    img(src="images/subtitle.svg")
+                h1 Личный кабинет
+
+            div.account
+                div.side
+                    a(href="#").active Общая информация
+                    a(href="#") Текущие заказы
+                    a(href="#") История заказов
+                div.content
+
+                    div.groups
+                        div.group
+                            h5 Личные данные
+                            div.inputs
+                                fieldset.input.name
+                                    span Имя
+                                    input(type="text", placeholder="Имя" value="Владимир")
+                                fieldset.input.surname
+                                    span Фамилия
+                                    input(type="text", placeholder="Фамилия" value="Иванов")
+                                fieldset.input.birthday
+                                    span Дата рождения
+                                    input(type="text", placeholder="___ __ __")
+
+                        div.group
+                            h5 Контактные данные
+                            div.inputs
+                                fieldset.input.phone
+                                    span Номер телефона
+                                    input(type="text", placeholder="Номер телефона", value="+ 7 (999) 999-99-99")
+                                fieldset.input.email
+                                    span E-mail
+                                    input(type="text", placeholder="E-mail" value="bill.sanders@gmail.com")
+
+                        div.group
+                            h5 Адрес
+                            div.inputs
+                                fieldset.input.city
+                                    span Город
+                                    input(type="text", placeholder="Город", value="г Москва")
+                                fieldset.input.street
+                                    span Улица
+                                    input(type="text", placeholder="Улица" value="ул Южная")
+                                fieldset.input.house
+                                    span Дом
+                                    input(type="text", placeholder="Дом", value="87")
+                                fieldset.input.flat
+                                    span Квартира
+                                    input(type="text", placeholder="Квартира" value="5")
+
+                    div.buttons
+                        button.red
+                            span Сохранить
+                        button
+                            span Отмена
+            

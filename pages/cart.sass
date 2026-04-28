@@ -1,0 +1,157 @@
+@use '../components/common/sass/_mixins' as *
+@use '../components/common/sass/_colors' as *
+@use '../components/sections/_shops'
+
+section.cart
+
+    div.container
+        padding-top: var(--section-gap)
+        padding-bottom: var(--section-gap)
+
+    div.section_title.inner
+        margin-bottom: var(--section-gap)
+        div.subtitle
+            +s(m)
+                display: none
+
+    div.cart
+        display: grid
+        grid-template-columns: repeat(12, 1fr)
+        grid-gap: var(--grid-gap)
+        +s(m)
+            grid-template-columns: 1fr
+
+        div.total
+            display: grid
+            grid-column: 3 span
+            +s(l)
+                grid-column: 4 span
+            +s(m)
+                grid-column: 1 span
+                order: 2
+
+        div.list
+            grid-column: 9 span
+            +s(l)
+                grid-column: 8 span
+            +s(m)
+                grid-column: 1 span
+                order: 1
+
+    div.total
+        display: grid
+        align-items: start
+        grid-template-rows: 1fr max-content
+        grid-gap: var(--section-gap)
+        div.wrap
+            display: grid
+            grid-gap: 10px
+            div.order
+                display: grid
+                align-items: end
+                grid-template-rows: max-content 1fr
+                padding: 32px 24px
+                border: 1px solid $dark-6
+                border-radius: 10px
+                min-height: 380px
+                +s(l)
+                    padding: 24px
+                    min-height: unset
+                +s(m)
+                    padding: 24px 20px
+                h4
+                    display: block
+                    font-weight: 500
+                    font-size: 24px
+                    line-height: 110%
+                    letter-spacing: -0.02em
+                    color: $dark-1
+                    border-bottom: 1px solid $dark-6
+                    padding-bottom: 24px
+                    +s(l)
+                        font-size: 20px
+                        margin-bottom: 24px
+                        padding-bottom: 16px
+                div.table
+                    display: grid
+                    grid-gap: 16px
+                    +s(l)
+                        grid-gap: 12px
+                    +s(m)
+                        grid-gap: 8px
+
+                    div.row,
+                    div.sum
+                        display: grid
+                        align-items: end
+                        grid-template-columns: max-content 1fr max-content
+                        grid-gap: 8px
+                    div.row
+                        span.note
+                            font-weight: 500
+                            font-size: 18px
+                            line-height: 120%
+                            letter-spacing: -0.01em
+                            color: $dark-3
+                            +s(l)
+                                font-size: 16px
+                        span
+                            font-weight: 500
+                            font-size: 18px
+                            line-height: 120%
+                            letter-spacing: -0.01em
+                            text-align: right
+                            color: $dark-1
+                            +s(l)
+                                font-size: 16px
+                    div.sum
+                        margin-top: 8px
+                        border-top: 1px solid $dark-6
+                        padding-top: 24px
+                        +s(l)
+                            margin-top: 12px
+                        +s(m)
+                            margin-top: 16px
+                        span.note
+                            font-weight: 500
+                            font-size: 24px
+                            line-height: 110%
+                            letter-spacing: -0.02em
+                            color: $dark-1
+                            +s(l)
+                                font-size: 20px
+                        span
+                            font-weight: 500
+                            font-size: 24px
+                            line-height: 110%
+                            letter-spacing: -0.02em
+                            color: $dark-1
+                            +s(l)
+                                font-size: 20px
+                    hr
+                        display: block
+                        height: 1px
+                        width: 100%
+                        background: $dark-8
+
+        a.button
+            width: 100%
+            &.red
+                svg
+                    path
+                        fill: $dark-1
+
+    div.list
+        display: grid
+        align-items: start
+        align-content: start
+        grid-gap: 8px
+
+section.popular
+    div.container
+        padding-top: var(--section-gap)
+        padding-bottom: var(--section-gap)
+
+    div.section_title
+        div.navigation
+            justify-content: end

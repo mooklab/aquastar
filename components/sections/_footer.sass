@@ -1,0 +1,156 @@
+@use '../../components/common/sass/_colors' as *
+@use '../../components/common/sass/_mixins' as *
+
+footer
+    background: #1b2128
+    color: white
+    padding-top: var(--section-gap)
+    margin-top: var(--section-gap)
+
+    div.container
+        font-weight: 500
+        font-size: 18px
+        line-height: 120%
+        letter-spacing: -0.01em
+        color: $white
+        +s(l)
+            font-size: 16px
+
+    div.top
+        display: grid
+        align-items: start
+        grid-template-columns: repeat(12, 1fr)
+        grid-gap: 100px var(--grid-gap)
+        grid-template-areas: 'Logotype Logotype Catalog' 'Main Socials Catalog' 'Develop Contacts Catalog'
+        margin-bottom: 40px
+        +s(m)
+            grid-gap: var(--grid-gap)
+            grid-template-columns: repeat(2, 1fr)
+            grid-template-areas: 'Logotype Logotype' 'Main Catalog' 'Socials Catalog' 'Contacts Catalog' 'Develop Catalog'
+        +s(s)
+            grid-template-columns: 1fr
+            grid-template-areas: 'Catalog' 'Main' 'Socials' 'Contacts'
+            grid-gap: 40px
+
+        a.logotype
+            grid-area: Logotype
+            grid-column: 9 span
+            padding-right: 80px
+            +s(l)
+                grid-column: 8 span
+            +s(m)
+                grid-column: 2 span
+            +s(s)
+                display: none
+            img
+                width: 100%
+
+        a.emblem
+            display: none
+            +s(s)
+                display: block
+                position: absolute
+                top: 40px
+                right: 10px
+
+        div.menu_main
+            grid-area: Main
+            display: grid
+            grid-gap: 14px
+            grid-column: 5 span
+            +s(l)
+                grid-column: 4 span
+            +s(m)
+                grid-column: 1 span
+                grid-gap: 10px
+
+        div.menu_catalog
+            grid-area: Catalog
+            display: grid
+            grid-gap: 14px
+            grid-column: 3 span
+            +s(l)
+                grid-column: 4 span
+            +s(m)
+                grid-column: 1 span
+                grid-gap: 10px
+
+            a:first-child
+                display: none
+                +s(s)
+                    display: inline
+
+            a
+                +s(s)
+                    display: none
+
+        div.socials
+            grid-area: Socials
+            display: grid
+            grid-gap: 14px
+            grid-column: 4 span
+            +s(m)
+                grid-column: 1 span
+                grid-gap: 10px
+            span
+                color: $red
+
+        div.develop
+            grid-area: Develop
+            grid-column: 5 span
+            display: flex
+            align-self: end
+            gap: 12px
+            +s(l)
+                grid-column: 4 span
+            +s(m)
+                grid-column: 1 span
+                grid-gap: 10px
+            +s(s)
+                display: none
+
+        div.contacts
+            grid-area: Contacts
+            display: grid
+            grid-gap: 14px
+            grid-column: 4 span
+            align-self: end
+            +s(m)
+                grid-column: auto
+                align-self: start
+                grid-gap: 10px
+            span
+                color: $dark-3
+
+    div.bottom
+        display: grid
+        grid-template-columns: repeat(12, 1fr)
+        grid-gap: var(--grid-gap)
+        border-top: 1px solid $dark-2
+        padding: 24px 0
+        font-weight: 500
+        font-size: 14px
+        line-height: 110%
+        letter-spacing: -0.01em
+        color: $dark-3
+        +s(s)
+            grid-template-columns: 1fr
+            grid-gap: 16px
+        a.personal
+            grid-column: 5 span
+            +s(l)
+                grid-column: 4 span
+            +s(s)
+                grid-column: 1 span
+        span.copyright
+            grid-column: 4 span
+            +s(l)
+                grid-column: 4 span
+            +s(s)
+                grid-column: 1 span
+        a.policy
+            grid-column: 3 span
+            +s(l)
+                grid-column: 4 span
+            +s(s)
+                grid-column: 1 span

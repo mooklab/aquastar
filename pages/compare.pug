@@ -1,0 +1,149 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/compare.css")
+
+block content
+
+    section.compare
+        div.container
+            
+            div.section_title.inner
+                div.subtitle
+                    img(src="images/subtitle.svg")
+                h1 Сравнение
+
+            div.compare_control
+                div(onclick="this.classList.toggle('active')").difference
+                    div
+                    span Только отличия
+                div.trash
+                    include ../images/trash.svg
+
+            div.table
+                table
+                    tbody
+                        tr
+                            td 
+                                div(class="big").product_card
+                                    div.additional
+                                        a(href="#").tag Exactus
+                                    div.preview
+                                        img(src="images/1.webp", alt="Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный ")
+                                        div.controls
+                                            div(onclick="this.classList.toggle('active')").favourite
+                                                include ../images/favourite.svg
+                                            div(onclick="this.classList.toggle('active')").compare
+                                                include ../images/compare.svg
+                                    div.description
+                                        div.text
+                                            span Насос
+                                            h5 Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный 
+                                        div.order
+                                            span.price 75 000 ₽
+                                            div.icons
+                                                div(onclick="this.classList.toggle('active')").cart
+                                                    include ../images/cart.svg
+                                                    include ../images/cart_red.svg
+                                                div(onclick="this.classList.toggle('active')").trash
+                                                    img(src="images/trash.svg")
+                                    a(href="#").link_area
+                            td 
+                                div(class="big").product_card
+                                    div.additional
+                                        a(href="#").tag Exactus
+                                    div.preview
+                                        img(src="images/1.webp", alt="Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный ")
+                                        div.controls
+                                            div(onclick="this.classList.toggle('active')").favourite
+                                                include ../images/favourite.svg
+                                            div(onclick="this.classList.toggle('active')").compare
+                                                include ../images/compare.svg
+                                    div.description
+                                        div.text
+                                            span Насос
+                                            h5 Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный 
+                                        div.order
+                                            span.price 75 000 ₽
+                                            div.icons
+                                                div(onclick="this.classList.toggle('active')").cart
+                                                    include ../images/cart.svg
+                                                    include ../images/cart_red.svg
+                                                div(onclick="this.classList.toggle('active')").trash
+                                                    img(src="images/trash.svg")
+                                    a(href="#").link_area
+                        tr
+                            td
+                                span.note Производитель
+                                span IQUE
+                            td
+                                span.note Производитель
+                                span Bestway
+                        tr
+                            td
+                                span.note Страна производства
+                                span Швеция
+                            td
+                                span.note Страна производства
+                                span Китай
+                        tr
+                            td
+                                span.note Форма басcейна
+                                span Нет
+                            td
+                                span.note Форма басcейна
+                                span Каркасные
+                        tr
+                            td
+                                span.note Объём бассейна (90%), л
+                                span 1500.000000
+                            td
+                                span.note Объём бассейна (90%), л
+                                span 16015.000000
+                        tr
+                            td
+                                span.note Комплектация
+                                span Каркасный бассейн Bestway 56438 Фильтрационная установка Bestway 58386 Картридж для фильтров Bestway 58094 (II) Лестница Bestway 58336 Покрытие на бассейн 5803
+                            td
+                                span.note Комплектация
+                                span Каркасный бассейн Bestway 56438 Фильтрационная установка Bestway 58386 Картридж для фильтров Bestway 58094 (II) Лестница Bestway 58336 Покрытие на бассейн 5803
+                            //- td
+                            //-     span.note Комплектация
+                            //-     span Каркасный бассейн Bestway 56438 Фильтрационная установка Bestway 58386 Картридж для фильтров Bestway 58094 (II) Лестница Bestway 58336 Покрытие на бассейн 5803
+                            //- td
+                            //-     span.note Комплектация
+                            //-     span Каркасный бассейн Bestway 56438 Фильтрационная установка Bestway 58386 Картридж для фильтров Bestway 58094 (II) Лестница Bestway 58336 Покрытие на бассейн 5803
+                            //- td
+                            //-     span.note Комплектация
+                            //-     span Каркасный бассейн Bestway 56438 Фильтрационная установка Bestway 58386 Картридж для фильтров Bestway 58094 (II) Лестница Bestway 58336 Покрытие на бассейн 5803
+                            //- td
+                            //-     span.note Комплектация
+                            //-     span Каркасный бассейн Bestway 56438 Фильтрационная установка Bestway 58386 Картридж для фильтров Bestway 58094 (II) Лестница Bestway 58336 Покрытие на бассейн 5803
+                            //- td
+                            //-     span.note Комплектация
+                            //-     span Каркасный бассейн Bestway 56438 Фильтрационная установка Bestway 58386 Картридж для фильтров Bestway 58094 (II) Лестница Bestway 58336 Покрытие на бассейн 5803
+                            //- td
+                            //-     span.note Комплектация
+                            //-     span Каркасный бассейн Bestway 56438 Фильтрационная установка Bestway 58386 Картридж для фильтров Bestway 58094 (II) Лестница Bestway 58336 Покрытие на бассейн 5803
+                        tr
+                            td
+                                span.note Энергопотребление
+                                span 5.7 кВт
+                            td
+                                span.note Энергопотребление
+                                span 5.7 кВт
+                        tr
+                            td
+                                span.note Высота, см
+                                span 89.000000
+                            td
+                                span.note Высота, см
+                                span 122.000000
+                        tr
+                            td
+                                span.note Класс ПВХ
+                                span Нет
+                            td
+                                span.note Класс ПВХ
+                                span Базовый

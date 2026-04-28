@@ -1,0 +1,59 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+mixin category(title, image, count)
+    div.catalog_card
+        h4: a(href="#")= title
+        div.accordion_menu
+            div.overflow
+                ul
+                    li: a(href="#") Фильтрация
+                    li: a(href="#") Насосное оборудование
+                    li: a(href="#") Дезинфекция
+                    li: a(href="#") Подогрев
+                    li: a(href="#") Дозирование и контроль
+                a(href="#").button.red
+                    span Всё оборудование 
+        div(onclick="this.closest('div.catalog_card').classList.toggle('opened')").button
+            img(src="images/category_minus.svg").minus
+            img(src="images/category_plus.svg").plus
+        span.count= count
+        img(src=image, alt=title).preview
+
+
+block links
+    link(rel="stylesheet", href="css/catalog.css")
+
+block content
+
+    section.catalog
+        div.container
+            
+            div.section_title.inner
+                div.subtitle
+                    img(src="images/subtitle.svg")
+                div.title_count
+                    h1 Каталог
+                    span 435
+
+
+            div.list
+                +category('Бассейны и SPA', 'images/category_1.webp', '35')
+                +category('Оборудование для бассейна', 'images/category_1.webp', '35')
+                +category('Химия для бассейна', 'images/category_1.webp', '35')
+                +category('Трубы и фитинги', 'images/category_1.webp', '35')
+                +category('Обустройство территории вокруг бассейна', 'images/category_1.webp', '35')
+                +category('Роботы – пылесосы', 'images/category_1.webp', '35')
+                +category('Окружающее бассейн оборудование', 'images/category_1.webp', '35')
+                +category('Осушители', 'images/category_1.webp', '35')
+                +category('Павильоны для бассейна', 'images/category_1.webp', '35')
+                +category('Сферическое из поликарбоната', 'images/category_1.webp', '35')
+                +category('Пергола', 'images/category_1.webp', '35')
+                +category('Террасса', 'images/category_1.webp', '35')
+                +category('Покрытия для бассейна', 'images/category_1.webp', '35')
+                +category('Пузырьковое покрытие', 'images/category_1.webp', '35')
+                +category('Ролета', 'images/category_1.webp', '35')
+                +category('Лежаки', 'images/category_1.webp', '35')
+                +category('Уличная мебель', 'images/category_1.webp', '35')
+                    
+    

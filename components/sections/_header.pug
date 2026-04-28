@@ -1,0 +1,155 @@
+mixin menu_item(title)
+    div.menu_item
+        div(onclick="catalogMenu(this)").menu_title
+            span= title
+            include ../../images/swiper_arrow.svg
+        div.submenu
+            div.list
+                a(href="#").submenu_item
+                    img(src="images/1.webp")
+                    span Фильтрация
+                a(href="#").submenu_item
+                    img(src="images/1.webp")
+                    span Насосное оборудование
+                a(href="#").submenu_item
+                    img(src="images/1.webp")
+                    span Дезинфекция
+                a(href="#").submenu_item
+                    img(src="images/1.webp")
+                    span Подогрев
+                a(href="#").submenu_item
+                    img(src="images/1.webp")
+                    span Дозирование и контроль
+
+header
+    div.container
+
+        div.menu_mobile
+            include ../../images/menu_mobile.svg
+
+        div.main
+            div.light
+                a(href="#").logotype
+                    img(src="images/logotype_header_light.svg", alt="Aquastar").desktop
+                    img(src="images/logotype_header.svg", alt="Aquastar").mobile
+                a(href="#").emblem
+                    img(src="images/emblem_light.svg", alt="Aquastar")
+            div.dark
+                a(href="#").logotype
+                    img(src="images/logotype_header.svg", alt="Aquastar")
+                a(href="#").emblem
+                    img(src="images/emblem.svg", alt="Aquastar")
+            button(onclick="this.closest('header').classList.toggle('catalog')").catalog
+                div.icon
+                    img(src="images/catalog.svg")
+                    include ../../images/cross.svg
+                span Каталог
+
+        menu
+            a(href="#") О компании
+            a(href="#") Дилерам
+            a(href="#") Доставка и оплата
+            a(href="#") Контакты
+
+        hr
+
+        a(href="#").phone +7 (495) 877-30-84 
+
+        div.controls
+            div(onclick="this.closest('header').classList.remove('signin', 'register', 'code'); this.closest('header').classList.toggle('search')").search
+                img(src="images/search.svg").search
+                img(src="images/cross.svg").cross
+            div.group
+                div.compare
+                    include ../../images/compare.svg
+                div.favourite
+                    include ../../images/favourite.svg
+                div.cart
+                    include ../../images/cart.svg
+                div.account
+                    div(onclick="this.closest('header').classList.remove('register', 'code', 'search'); this.closest('header').classList.toggle('signin')").icon
+                        include ../../images/account.svg
+                    div(onclick="this.closest('header').classList.remove('signin', 'register', 'code', 'search')").cross
+                        include ../../images/cross.svg
+
+        div.popup.signin
+            h3 Вход
+            form(action="") 
+                input(type="tel", placeholder="Номер телефона", minlegth="10" required)
+                button(onclick="event.preventDefault(); this.closest('header').classList.remove('signin', 'register', 'search', 'code'); this.closest('header').classList.add('code')").black
+                    span Получить код
+            button(onclick="this.closest('header').classList.remove('signin'); this.closest('header').classList.add('register')")
+                span У меня еще нет аккаунта
+
+        div.popup.code
+            div.text
+                h3 Введите код из смс
+                span Код отправлен на номер #[br]+ 7 (999) 999-99-99
+            form
+                div.code
+                    div.inputs
+                        input(type="text", maxlength="1", required)
+                        input(type="text", maxlength="1", required)
+                        input(type="text", maxlength="1", required)
+                        input(type="text", maxlength="1", required)
+                    span.repeat Отправить код повторно через #[b 42 сек]
+
+                div.buttons
+                    button(onclick="this.closest('header').classList.remove('code');").black
+                        span Войти
+                    button.transparent
+                        span Изменить номер
+
+        div.popup.register
+            h3 Регистрация
+            form(action="#") 
+                div.inputs
+                    input(type="text", placeholder="Имя*", required)
+                    input(type="text", placeholder="Фамилия", required)
+                    input(type="text", placeholder="Город*", required)
+                    input(type="text", placeholder="Номер телефона*", required)
+                    input(type="email", placeholder="E-mail*", required)
+
+                div.checkboxes
+                    label.checkbox
+                        input(type="checkbox", checked) 
+                        span Я согласен(-а) с политикой обработки персональных данных
+                    label.checkbox
+                        input(type="checkbox", checked) 
+                        span Я согласен(-а) с условиями публичной оферты
+                button.black
+                    span Зарегистрироваться
+
+        div.popup.search
+
+            form
+                input(type="search", placeholder="Искать товары", required)
+                button(onclick="event.preventDefault(); this.closest('div.popup').classList.add('show')")
+                    include ../../images/search.svg
+
+            div.block
+                div.overflow
+                    div.list
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+                        +product('images/1.webp', 'Насос',  'Насос-дозатор «Exactus», 2 л/ч, 10 бар, ручной, микропроцессорный', '75 000 ₽', 'small')
+
+        div.popup.catalog
+            +menu_item('Бассейны и SPA')
+            +menu_item('Оборудование для бассейна')
+            +menu_item('Пылесосы для бассейна')
+            +menu_item('Отделочные материалы')
+            +menu_item('Фонтаны')
+            +menu_item('Тепловые насосы для дома')
+            +menu_item('Запчасти')
+            +menu_item('Каяки')
+            +menu_item('Брендированная продукция')
+            +menu_item('Аквапарки')
+            +menu_item('Закладные для бассейна')
+            +menu_item('Накрытия на бассейны')
+            +menu_item('Детские товары')
+            +menu_item('Аквафитнес и отдых на воде')
+            +menu_item('Трубы и фитинги')
+            +menu_item('Химия для бассейна')
+            +menu_item('Аксессуары для бассейна')

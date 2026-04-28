@@ -1,0 +1,115 @@
+@use '../components/common/sass/_mixins' as *
+@use '../components/common/sass/_colors' as *
+
+section.about
+
+    div.container
+        padding-top: var(--section-gap)
+        padding-bottom: var(--section-gap)
+
+    div.section_title.inner
+        margin-bottom: var(--section-gap)
+        div.subtitle
+            +s(m)
+                display: none
+        h1
+            grid-column: 7 span
+            +s(m)
+                grid-column: 1 span
+
+div.content
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+    grid-gap: 0 var(--grid-gap)
+    +s(m)
+        grid-template-columns: 1fr
+
+    div.advantages
+        position: relative
+        grid-column: 12 span
+        margin-bottom: 40px
+        border-radius: 10px
+        overflow: clip
+        +s(l)
+            margin-bottom: 32px
+        +s(m)
+            grid-column: unset
+            margin-bottom: 24px
+
+        img
+            width: 100%
+            height: 650px
+            object-fit: cover
+            +s(l)
+                height: 376px
+            +s(m)
+                height: 400px
+
+        div.tags
+            display: grid
+            grid-template-columns: repeat(4, 1fr)
+            grid-gap: var(--grid-gap)
+            position: absolute
+            left: var(--grid-gap)
+            right: var(--grid-gap)
+            bottom: var(--grid-gap)
+            z-index: 1
+            +s(m)
+                display: flex
+                flex-wrap: wrap
+                gap: var(--grid-gap)
+            +s(s)
+                gap: 4px
+            span
+                border: 1px solid rgba(255, 255, 255, 0.2)
+                border-radius: 10px
+                padding: 24px 44px
+                backdrop-filter: blur(15px)
+                background: rgba(255, 255, 255, 0.1)
+                font-weight: 500
+                font-size: 24px
+                line-height: 110%
+                letter-spacing: -0.02em
+                color: $white
+                +s(l)
+                    padding: 16px 20px
+                    font-size: 18px
+                +s(m)
+                    padding: 14px 16px
+                    width: max-content
+                    background: rgba(43, 51, 63, 0.5)
+
+        &::after
+            content: ''
+            position: absolute
+            left: 0
+            bottom: 0
+            right: 0
+            height: 50%
+            background: linear-gradient(to top, #000045 0%, #000f595e 37%, #00418b00 100%)
+            z-index: 0
+
+    div.text
+        grid-column: 4 / 10
+        display: grid
+        grid-gap: 40px
+        font-weight: 500
+        font-size: 28px
+        line-height: 120%
+        letter-spacing: -0.02em
+        margin-bottom: 40px
+        +s(l)
+            grid-gap: 24px
+            margin-bottom: 32px
+            font-size: 20px
+        +s(m)
+            grid-column: unset
+
+    div.categories
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: var(--grid-gap)
+        grid-column: 12 span
+        +s(m)
+            grid-template-columns: 1fr
+            grid-column: unset

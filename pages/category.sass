@@ -1,0 +1,271 @@
+@use '../components/common/sass/_mixins' as *
+@use '../components/common/sass/_colors' as *
+
+section.category
+
+    div.container
+        padding-top: var(--section-gap)
+        padding-bottom: var(--section-gap)
+
+    div.products
+        display: grid
+        align-items: start
+        grid-template-columns: repeat(12, 1fr)
+        grid-gap: var(--grid-gap)
+
+        span.side_title
+            grid-column: 3 span
+            align-self: end
+            font-weight: 500
+            font-size: 18px
+            line-height: 120%
+            letter-spacing: -0.01em
+            color: $dark-1
+            +s(l)
+                display: none
+
+        div.tags
+            grid-column: 5 span
+            align-self: end
+            font-weight: 500
+            font-size: 18px
+            line-height: 120%
+            letter-spacing: -0.01em
+            color: $dark-1
+            +s(l)
+                grid-column: 6 span
+            +s(s)
+                display: none
+
+        a.button
+            grid-column: 4 span
+            justify-self: end
+            +s(l)
+                grid-column: 6 span
+            +s(s)
+                grid-column: 12 span
+                width: 100%
+
+        div.side
+            border-top: 1px solid $dark-3
+            padding-top: 24px
+            grid-column: 3 span
+            +s(l)
+                display: none
+            div.category
+
+                div.name
+                    cursor: pointer
+                    display: flex
+                    gap: 8px
+                    padding-top: 8px
+                    padding-bottom: 8px
+
+                    img.plus
+                        display: block
+                    img.minus
+                        display: none
+                    strong
+                        font-weight: 500
+                        font-size: 18px
+                        line-height: 120%
+                        letter-spacing: -0.01em
+                        color: $dark-1
+                        &.title
+                            flex-grow: 1
+                        &.count
+                            display: none
+
+                div.subcategories
+                    display: grid
+                    grid-template-rows: 0fr
+                    transition: all 0.5s
+                    div.overflow
+                        overflow: hidden
+                    ul
+                        display: grid
+                        padding-left: 40px
+                        padding-top: 16px
+                        padding-bottom: 24px
+                        li
+                            cursor: pointer
+                            font-weight: 500
+                            font-size: 18px
+                            line-height: 120%
+                            letter-spacing: -0.01em
+                            color: $dark-3
+                            padding-top: 8px
+                            padding-bottom: 8px
+                            &:hover
+                                color: $dark-1
+
+                &.opened
+                    div.name
+                        img.plus
+                            display: none
+                        img.minus
+                            display: block
+                        strong.count
+                            display: block
+                    div.subcategories
+                        grid-template-rows: 1fr
+
+        div.list
+            grid-column: 9 span
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            grid-gap: var(--grid-gap)
+            +s(l)
+                grid-column: 12 span
+            +s(m)
+                grid-template-columns: repeat(2, 1fr)
+            +s(s)
+                grid-template-columns: 1fr
+
+            div.product_card
+                +s(s)
+                    grid-template-columns: repeat(2, 1fr)
+                    grid-gap: 16px
+                    div.additional
+                        position: absolute
+                        top: 16px
+                        left: 16px
+                    div.preview
+                        position: relative
+                        border-right: 1px solid #c8ccd2
+                        border-bottom: unset
+                        padding: unset
+                    div.controls
+                        top: 0
+                    div.cart
+                        display: none
+                    div.text
+                        margin-top: unset
+                        margin-bottom: 12px
+
+div.popup.filter
+    position: fixed
+    top: 16px
+    right: 16px
+    bottom: 16px
+    border-radius: 10px
+    width: 540px
+    background: $white
+    z-index: 10
+    padding: 24px
+    display: none
+    align-content: start
+    grid-template-rows: max-content 1fr max-content
+    overflow: auto
+    z-index: 11
+    +s(s)
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        padding: 16px
+
+    &::-webkit-scrollbar
+        display: none
+
+    div.title
+        display: grid
+        align-items: center
+        grid-template-columns: 1fr max-content
+        grid-gap: var(--grid-gap)
+        border-bottom: 1px solid $dark-7
+        width: calc(100% + 48px)
+        margin-left: -24px
+        padding: 24px
+        padding-top: unset
+        +s(s)
+            width: calc(100% + 32px)
+            padding: 16px
+            padding-top: unset
+            margin-left: -16px
+
+        img
+            cursor: pointer
+
+    div.accordion
+        border-bottom: 1px solid $dark-7
+        transition: all 0.5s
+        div.accordion_caption
+            cursor: pointer
+            display: grid
+            align-items: center
+            grid-template-columns: 1fr max-content
+            padding: 24px 0
+            +s(s)
+                padding: 16px 0
+            img.minus
+                display: none
+            img.plus
+                display: block
+        &.open
+            border-bottom: 1px solid $dark-1
+            div.accordion_caption
+                img.minus
+                    display: block
+                img.plus
+                    display: none
+
+    div.range
+        padding-bottom: 24px
+
+    div.checkboxes
+        display: grid
+        grid-gap: 8px
+        padding-top: 1px
+        padding-bottom: 24px
+
+    label.checkbox
+        cursor: pointer
+        font-weight: 500
+        font-size: 16px
+        line-height: 110%
+        letter-spacing: -0.01em
+        text-align: center
+        color: $dark-3
+        text-align: left
+        span
+            position: relative
+            display: grid
+            align-items: start
+            grid-template-columns: max-content 1fr
+            grid-gap: 8px
+        span:before
+            content: ''
+            display: block
+            position: relative
+            top: -1px
+            width: 18px
+            height: 18px
+            border-radius: 2px
+            border: 1px solid $dark-1
+        span:after
+            content: ''
+            position: absolute
+            top: 5px
+            left: 6px
+            display: none
+            width: 9px
+            height: 7px
+            background-image: url(../images/checkbox_tick.svg)
+        input:checked + span:after
+            display: block
+
+    div.buttons
+        display: grid
+        grid-gap: 16px
+        margin-top: 32px
+        +s(s)
+            grid-gap: 8px
+        button
+            width: 100%
+            span
+                text-align: center
+
+    &.opened
+        display: grid

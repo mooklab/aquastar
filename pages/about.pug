@@ -1,0 +1,36 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/about.css")
+
+block content
+
+    section.about
+        div.container
+            
+            div.section_title.inner
+                div.subtitle
+                    img(src="images/subtitle.svg")
+                h1 О компании
+
+            div.content
+                div.advantages
+                    img(src="images/4.webp", alt="Бетонно соблюдаем сроки")
+                    div.tags
+                        span Бетонно соблюдаем сроки
+                        span Поэтапная оплата 
+                        span Фотоотчет о ходе работ 
+                        span Фиксируем цену по договору
+
+                div.text
+                    p Компания «АкваСтар» уже более 20 лет является лидером и признанным экспертом на рынке продаж бассейнов и сопутствующего оборудования. Мы отслеживаем развитие технологий и появление новинок среди товаров в области бассейного дела. 
+                    p Это дает нам возможность оставаться лучшими и предлагать своим клиентам исключительно качественное и современное оборудование, как для частного, так и для коммерческого использования:
+
+                div.categories
+                    +category('Бассейны', 'images/2.webp', '34')
+                    +category('Водные <br/>комплексы', 'images/3.webp', '52')
+                    +category('Спортивно-<br/>развлекательные <br/>водные центры', 'images/6.webp', '74')
+                    +category('Аквапарки', 'images/5.webp', '98')
+
+            
