@@ -29,15 +29,15 @@ header
 
         div.main
             div.light
-                a(href="#").logotype
+                a(href="pages.html").logotype
                     img(src="images/logotype_header_light.svg", alt="Aquastar").desktop
                     img(src="images/logotype_header.svg", alt="Aquastar").mobile
-                a(href="#").emblem
+                a(href="pages.html").emblem
                     img(src="images/emblem_light.svg", alt="Aquastar")
             div.dark
-                a(href="#").logotype
+                a(href="pages.html").logotype
                     img(src="images/logotype_header.svg", alt="Aquastar")
-                a(href="#").emblem
+                a(href="pages.html").emblem
                     img(src="images/emblem.svg", alt="Aquastar")
             button(onclick="this.closest('header').classList.toggle('catalog')").catalog
                 div.icon
@@ -153,3 +153,23 @@ header
             +menu_item('Трубы и фитинги')
             +menu_item('Химия для бассейна')
             +menu_item('Аксессуары для бассейна')
+
+        div(onclick="this.closest('header').classList.remove('signin', 'register', 'code', 'search', 'catalog')").backdrop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

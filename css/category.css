@@ -348,4 +348,18 @@ div.popup.filter div.buttons button span {
 }
 div.popup.filter.opened {
   display: grid;
+}
+div.popup.filter.opened + div.backdrop {
+  display: block;
+}
+
+div.backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(43, 51, 63, 0.8);
+  z-index: 10;
 }/*# sourceMappingURL=category.css.map */

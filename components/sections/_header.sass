@@ -104,7 +104,7 @@ header
         user-select: none
         display: grid
         grid-template-columns: repeat(2, max-content)
-        z-index: 2
+        z-index: 4
         div.search
             cursor: pointer
             display: grid
@@ -203,7 +203,7 @@ header
         width: 500px
         backdrop-filter: blur(29px)
         background: $dark-9
-        z-index: 1
+        z-index: 3
         pointer-events: none
         opacity: 0
         transition: all 0.5s
@@ -389,7 +389,6 @@ header
         grid-gap: 24px
         width: 100%
         height: 90vh
-        z-index: -1
         padding-top: 80px
         &::before
             content: ''
@@ -556,6 +555,15 @@ header
                 div.menu_title
                     color: $dark-3
 
+    &.signin,
+    &.register,
+    &.code,
+    &.search
+        div.container
+            backdrop-filter: unset
+        div.backdrop
+            display: block
+
     &.signin
         div.controls
             div.group
@@ -609,12 +617,29 @@ header
 
     &.catalog
         button.catalog
+            z-index: 3
             div.icon
                 img
                     display: none
                 svg
                     display: block
+        div.controls
+            z-index: -1
         div.popup.catalog
             opacity: 1
             pointer-events: auto
             top: 100%
+        div.container
+            backdrop-filter: unset
+        div.backdrop
+            display: block
+
+    div.backdrop
+        display: none
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background: rgba(43, 51, 63, 0.8)
+        z-index: 2

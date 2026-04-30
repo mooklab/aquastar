@@ -2446,7 +2446,7 @@ header div.controls {
   display: grid;
   grid-template-columns: repeat(2, -webkit-max-content);
   grid-template-columns: repeat(2, max-content);
-  z-index: 2;
+  z-index: 4;
 }
 header div.controls div.search {
   cursor: pointer;
@@ -2578,7 +2578,7 @@ header div.popup {
   width: 500px;
   backdrop-filter: blur(29px);
   background: #f5f5f5;
-  z-index: 1;
+  z-index: 3;
   pointer-events: none;
   opacity: 0;
   -webkit-transition: all 0.5s;
@@ -2805,7 +2805,6 @@ header div.popup.search {
   grid-gap: 24px;
   width: 100%;
   height: 90vh;
-  z-index: -1;
   padding-top: 80px;
 }
 header div.popup.search::before {
@@ -3008,6 +3007,12 @@ header div.popup.catalog div.submenu a.submenu_item {
 header div.popup.catalog:has(div.menu_item.opened) div.menu_item div.menu_title {
   color: #6c7787;
 }
+header.signin div.container, header.register div.container, header.code div.container, header.search div.container {
+  backdrop-filter: unset;
+}
+header.signin div.backdrop, header.register div.backdrop, header.code div.backdrop, header.search div.backdrop {
+  display: block;
+}
 header.signin div.controls div.group div.account div.cross {
   display: grid;
 }
@@ -3052,16 +3057,38 @@ header.search div.popup.search {
   pointer-events: auto;
   top: 100%;
 }
+header.catalog button.catalog {
+  z-index: 3;
+}
 header.catalog button.catalog div.icon img {
   display: none;
 }
 header.catalog button.catalog div.icon svg {
   display: block;
 }
+header.catalog div.controls {
+  z-index: -1;
+}
 header.catalog div.popup.catalog {
   opacity: 1;
   pointer-events: auto;
   top: 100%;
+}
+header.catalog div.container {
+  backdrop-filter: unset;
+}
+header.catalog div.backdrop {
+  display: block;
+}
+header div.backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(43, 51, 63, 0.8);
+  z-index: 2;
 }
 
 footer {
