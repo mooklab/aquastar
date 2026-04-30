@@ -2535,7 +2535,8 @@ header div.controls div.group div.cart {
   cursor: pointer;
   display: grid;
 }
-header div.controls div.group div.account {
+header div.controls div.group div.account div.icon,
+header div.controls div.group div.account div.cross {
   cursor: pointer;
   display: grid;
   -webkit-box-align: center;
@@ -2549,13 +2550,15 @@ header div.controls div.group div.account {
   background: #ff682b;
 }
 @media (max-width: 1280px) {
-  header div.controls div.group div.account {
+  header div.controls div.group div.account div.icon,
+  header div.controls div.group div.account div.cross {
     width: 42px;
     height: 42px;
   }
 }
 @media (max-width: 640px) {
-  header div.controls div.group div.account {
+  header div.controls div.group div.account div.icon,
+  header div.controls div.group div.account div.cross {
     display: none;
   }
 }
@@ -2977,6 +2980,7 @@ header div.popup.catalog div.submenu {
   padding: 0px;
   opacity: 0;
   pointer-events: none;
+  margin-left: -10px;
 }
 header div.popup.catalog div.submenu div.list {
   display: grid;

@@ -75,7 +75,7 @@ header
         div.popup.signin
             h3 Вход
             form(action="") 
-                input(type="tel", placeholder="Номер телефона", minlegth="10" required)
+                input(type="tel", placeholder="Номер телефона", required)
                 button(onclick="event.preventDefault(); this.closest('header').classList.remove('signin', 'register', 'search', 'code'); this.closest('header').classList.add('code')").black
                     span Получить код
             button(onclick="this.closest('header').classList.remove('signin'); this.closest('header').classList.add('register')")

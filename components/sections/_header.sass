@@ -170,20 +170,22 @@ header
                 display: grid
 
             div.account
-                cursor: pointer
-                display: grid
-                align-items: center
-                justify-items: center
-                border-radius: 8px
-                width: 48px
-                height: 48px
-                backdrop-filter: blur(15px)
-                background: $red
-                +s(l)
-                    width: 42px
-                    height: 42px
-                +s(s)
-                    display: none
+                div.icon,
+                div.cross
+                    cursor: pointer
+                    display: grid
+                    align-items: center
+                    justify-items: center
+                    border-radius: 8px
+                    width: 48px
+                    height: 48px
+                    backdrop-filter: blur(15px)
+                    background: $red
+                    +s(l)
+                        width: 42px
+                        height: 42px
+                    +s(s)
+                        display: none
 
                 div.icon
                     display: grid
@@ -527,6 +529,7 @@ header
             padding: 0px
             opacity: 0
             pointer-events: none
+            margin-left: -10px
 
             div.list
                 display: grid
