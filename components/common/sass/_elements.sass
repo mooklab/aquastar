@@ -1430,9 +1430,16 @@ div.range
         input::-webkit-inner-spin-button
             -webkit-appearance: none
 
-form:invalid
-    button.black
-        pointer-events: none
-        background: white
-        span
-            color: $dark-7
+form
+    &:invalid
+        button.black
+            pointer-events: none
+            background: white
+            span
+                color: $dark-7
+    &:has(input.invalid)
+        button.black
+            pointer-events: none
+            background: white
+            span
+                color: $dark-7

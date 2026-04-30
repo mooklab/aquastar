@@ -39,7 +39,7 @@ header
                     img(src="images/logotype_header.svg", alt="Aquastar")
                 a(href="pages.html").emblem
                     img(src="images/emblem.svg", alt="Aquastar")
-            button(onclick="this.closest('header').classList.toggle('catalog')").catalog
+            button(onclick="headerPopup('catalog')").catalog
                 div.icon
                     img(src="images/catalog.svg")
                     include ../../images/cross.svg
@@ -56,7 +56,7 @@ header
         a(href="#").phone +7 (495) 877-30-84 
 
         div.controls
-            div(onclick="this.closest('header').classList.remove('signin', 'register', 'code'); this.closest('header').classList.toggle('search')").search
+            div(onclick="headerPopup('search')").search
                 img(src="images/search.svg").search
                 img(src="images/cross.svg").cross
             div.group
@@ -67,18 +67,18 @@ header
                 div.cart
                     include ../../images/cart.svg
                 div.account
-                    div(onclick="this.closest('header').classList.remove('register', 'code', 'search'); this.closest('header').classList.toggle('signin')").icon
+                    div(onclick="headerPopup('signin')").icon
                         include ../../images/account.svg
-                    div(onclick="this.closest('header').classList.remove('signin', 'register', 'code', 'search')").cross
+                    div(onclick="headerPopup('close')").cross
                         include ../../images/cross.svg
 
         div.popup.signin
             h3 Вход
             form(action="") 
                 input(type="tel", placeholder="Номер телефона", required)
-                button(onclick="event.preventDefault(); this.closest('header').classList.remove('signin', 'register', 'search', 'code'); this.closest('header').classList.add('code')").black
+                button(onclick="headerPopup('code')").black
                     span Получить код
-            button(onclick="this.closest('header').classList.remove('signin'); this.closest('header').classList.add('register')")
+            button(onclick="headerPopup('register')")
                 span У меня еще нет аккаунта
 
         div.popup.code
@@ -154,7 +154,7 @@ header
             +menu_item('Химия для бассейна')
             +menu_item('Аксессуары для бассейна')
 
-        div(onclick="this.closest('header').classList.remove('signin', 'register', 'code', 'search', 'catalog')").backdrop
+        div(onclick="headerPopup('close')").backdrop
 
 
 

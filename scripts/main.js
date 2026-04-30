@@ -175,30 +175,44 @@ window.catalogMenu = (element) => {
     element.parentNode.classList.toggle('opened')
 }
 
-// Ваалидация форм
-// const forms = document.querySelectorAll("form");
+// Переключатель попапов в шапке
+window.headerPopup = (activeClass) => {
+    let classes = ['signin', 'code', 'register', 'search', 'catalog']
+    const header = document.querySelector('header')
 
-// forms.forEach(form => {
+    activeClass === 'close' && header.classList.remove(...classes)
 
-//     form.addEventListener("submit", (event) => {
-//         event.preventDefault()
-//         console.log("Form submitted successfully!")
-//     })
+    if (header.classList[0]) {
+        if (header.classList[0] === activeClass) {
+            header.classList.remove(activeClass)
+        } else {
+            header.classList.remove(header.classList[0])
+            header.classList.add(activeClass)
+        }
+    } else {
+        header.classList.add(activeClass)
+    }
 
-//     const inputs = form.querySelectorAll("input, textarea");
-//     inputs.forEach((input) => {
-//         input.addEventListener("invalid", (event) => {
-//             event.target.style.border = "1px solid red"
-//             event.target.parentNode.classList.add('error')
-//             console.log(`Invalid input: ${event.target.name}`)
-//         })
+}
 
-//         input.addEventListener("input", () => {
-//             input.style.border = ""
-//             input.parentNode.classList.remove('error')
-//         })
-//     })
-// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Drag & Drop для таблицы сравнения

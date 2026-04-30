@@ -1,26 +1,25 @@
 // ----------------------- Маска для телефона
 
 export const phoneMask = function (event) {
+
     var element = event.target,
-        clearVal = element.dataset.phoneClear,
-        pattern = element.dataset.phonePattern,
-        matrix_def = "+7 (___) ___-__-__",
-        matrix = pattern ? pattern : matrix_def,
+        pattern = "+7 (___) ___-__-__",
         i = 0,
-        def = matrix.replace(/\D/g, ""),
+        def = pattern.replace(/\D/g, ""),
         val = event.target.value.replace(/\D/g, "")
 
-    if (clearVal !== 'false' && event.type === 'blur') {
-        if (val.length < matrix.match(/([\_\d])/g).length) {
-            event.target.value = ''
-            return
-        }
-    }
+    // Проверка на валиидацию
+    const cleanValue = element.value.replace(/\D/g, '')
+    const isValid = cleanValue.length === 11 || cleanValue.length === 12
+    element.classList.toggle('invalid', !isValid);
+
 
     if (def.length >= val.length) val = def
-    event.target.value = matrix.replace(/./g, function (a) {
+    event.target.value = pattern.replace(/./g, function (a) {
         return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
     })
+
+
 }
 
 

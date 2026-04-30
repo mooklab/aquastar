@@ -2191,6 +2191,13 @@ form:invalid button.black {
 form:invalid button.black span {
   color: #dadde1;
 }
+form:has(input.invalid) button.black {
+  pointer-events: none;
+  background: white;
+}
+form:has(input.invalid) button.black span {
+  color: #dadde1;
+}
 
 html:has(dialog[open]) {
   overflow-y: hidden;
