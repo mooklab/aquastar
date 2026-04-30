@@ -88,9 +88,9 @@
                     <h3>Вход</h3>
                     <form action=""> 
                         <input type="tel" placeholder="Номер телефона" required>
-                        <button class="black" onclick="headerPopup('code')"><span>Получить код</span></button>
+                        <button class="black" onclick="event.preventDefault(); headerPopup('code')"><span>Получить код</span></button>
                     </form>
-                    <button onclick="headerPopup('register')"><span>У меня еще нет аккаунта</span></button>
+                    <button onclick=" headerPopup('register')"><span>У меня еще нет аккаунта</span></button>
                 </div>
                 <div class="popup code">
                     <div class="text">

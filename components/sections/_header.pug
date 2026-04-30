@@ -76,9 +76,9 @@ header
             h3 Вход
             form(action="") 
                 input(type="tel", placeholder="Номер телефона", required)
-                button(onclick="headerPopup('code')").black
+                button(onclick="event.preventDefault(); headerPopup('code')").black
                     span Получить код
-            button(onclick="headerPopup('register')")
+            button(onclick=" headerPopup('register')")
                 span У меня еще нет аккаунта
 
         div.popup.code
